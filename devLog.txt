@@ -5,11 +5,12 @@
  `___,' `.___,  \/         /---/  `._.'  `---|
       `                                  \___/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Add to top please>
+!!<Add to top please>!!
 
-5/23-5/26 : Formulated the idea for our project. More to come ! :)
+5/28 : More planning.
 
 5/27 : Illustrated and laid out a plan for our project.
 Created Game class with basic prompt & newGame.<Cindy>
 
-5/28 : More planning.
+5/23-5/26 : Formulated the idea for our project. More to come ! :)
+
