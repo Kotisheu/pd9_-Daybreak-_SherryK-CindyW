@@ -7,12 +7,15 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !!<Add to top please>!!
 
-5/29- Interfacing, mas interfacing; started Attacks 
+5/30 : Some more to Attacks; created Battle; created User. <Cindy>
+
+5/29 : Interfacing, mas interfacing; <Sherry> 
+	started Attacks <Cindy>
 
 5/28 : More planning.
 
 5/27 : Illustrated and laid out a plan for our project.
-Created Game class with basic prompt & newGame.<Cindy>
+Created Game class with basic prompt & newGame. <Cindy>
 
 5/23-5/26 : Formulated the idea for our project. More to come ! :)
 
