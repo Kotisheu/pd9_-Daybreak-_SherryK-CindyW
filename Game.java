@@ -2,8 +2,12 @@ import java.io.*;
 
 public class Game {
     
-    public Game() {	
+    private User player;
+
+    public Game() {    
 	if ( prompt() ) {
+	    //Start a new Game with a new User
+	    player = new User();
 	    newGame();
 	}
 	else {
