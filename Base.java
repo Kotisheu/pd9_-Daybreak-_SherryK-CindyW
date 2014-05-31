@@ -1,7 +1,7 @@
-public abstract Base{
-//INPROGRESS, NO TOUCHY PLEASE 
+public abstract class Base{
+    //INPROGRESS, NO TOUCHY PLEASE 
     private int hp,mp,lvl,exp,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
-    private int bhp,bmp,bexp,bstr,bwis,bluck,bspeed,bdef,bheight,bweight;//max amount/base amount depending : > (10)
+    private int bhp,bmp,bexp,bstr,bwis,bluck,bspd,bdef,bheight,bweight;//max amount/base amount depending : > (10)
     private boolean isDead;
     private String name;
     private String person;
@@ -14,155 +14,209 @@ public abstract Base{
     public int getHp(){
 	return hp;
     }
-    public void setHp(int new){
-	hp= new;
+    public void setHp(int n){
+	hp= n;
     }
     public int getMp(){
 	return mp;
     }
-    public void setMp(int new){
-	mp= new;
+    public void setMp(int n){
+	mp= n;
     }
     
- public int getLvl(){
+    public int getLvl(){
 	return lvl;
     }
-    public void setLvl(int new){
-	lvl= new;
+    public void setLvl(int n){
+	lvl= n;
     }
     
- public int getExp(){
+    public int getExp(){
 	return exp;
     }
-    public void setExp(int new){
-	exp= new;
+    public void setExp(int n){
+	exp= n;
     }
     
- public int getStr(){
+    public int getStr(){
 	return str;
     }
-    public void setStr(int new){
-	str= new;
+    public void setStr(int n){
+	str= n;
     }
     
- public int getWis(){
+    public int getWis(){
 	return wis;
     }
-    public void setWis(int new){
-	wis= new;
+    public void setWis(int n){
+	wis= n;
     }
     
- public int getLuk(){
+    public int getLuk(){
 	return luk;
     }
-    public void setLuk(int new){
-	luk= new;
+    public void setLuk(int n){
+	luk= n;
     }
     
- public int getSpd(){
+    public int getSpd(){
 	return spd;
     }
-    public void setSpd(int new){
-	spd= new;
+    public void setSpd(int n){
+	spd= n;
     }
     
- public int getDef(){
+    public int getDef(){
 	return def;
     }
-    public void setDef(int new){
-	def= new;
+    public void setDef(int n){
+	def= n;
     }
     
- public int getMun(){
+    public int getMun(){
 	return mun;
     }
-    public void setMun(int new){
-	mun= new;
+    public void setMun(int n){
+	mun= n;
     }
     
- public int getHeight(){
+    public int getHeight(){
 	return height;
     }
-    public void setHeight(int new){
-	height= new;
+    public void setHeight(int n){
+	height= n;
     }
     
- public int getWeight(){
+    public int getWeight(){
 	return weight;
     }
-    public void setWeight(int new){
-	weight= new;
+    public void setWeight(int n){
+	weight= n;
     }
     //12
- public int getbHp(){
+    public int getbHp(){
 	return bhp;
     }
-    public void setbHp(int new){
-	bhp= new;
+    public void setbHp(int n){
+	bhp= n;
     }
     
- public int getbMp(){
+    public int getbMp(){
 	return bmp;
     }
-    public void setbMp(int new){
-	bmp= new;
+    public void setbMp(int n){
+	bmp= n;
     }
     
- public int getHp(){
-	return hp;
+    public int getbExp(){
+	return bexp;
     }
-    public void setHp(int new){
-	hp= new;
-    }
-    
- public int getHp(){
-	return hp;
-    }
-    public void setHp(int new){
-	hp= new;
+    public void setbExp(int n){
+	bexp= n;
     }
     
- public int getHp(){
-	return hp;
+    public int getbStr(){
+	return bstr;
     }
-    public void setHp(int new){
-	hp= new;
-    }
-    
- public int getHp(){
-	return hp;
-    }
-    public void setHp(int new){
-	hp= new;
+    public void setbStr(int n){
+	bstr= n;
     }
     
- public int getHp(){
-	return hp;
+    public int getbWis(){
+	return bwis;
     }
-    public void setHp(int new){
-	hp= new;
-    }
-    
- public int getHp(){
-	return hp;
-    }
-    public void setHp(int new){
-	hp= new;
+    public void setbWis(int n){
+	bwis= n;
     }
     
- public int getHp(){
-	return hp;
+    public int getbLuck(){
+	return bluck;
     }
-    public void setHp(int new){
-	hp= new;
+    public void setbLuck(int n){
+	bluck= n;
     }
     
- public int getHp(){
-	return hp;
+    public int getbSpd(){
+	return bspd;
     }
-    public void setHp(int new){
-	hp= new;
+    public void setbSpd(int n){
+	bspd= n;
+    }
+    
+    public int getbDef(){
+	return bdef;
+    }
+    public void setbDef(int n){
+	bdef= n;
+    }
+    
+    public int getbHeight(){
+	return bheight;
+    }
+    public void setbHeight(int n){
+	bheight= n;
+    }
+    
+    public int getbWeight(){
+	return bweight;
+    }
+    public void setbWeight(int n){
+	bweight= n;
     }
     //10
-    
+    public boolean getDead(){
+	return isDead;
+    }
+    public void setDead(boolean n){
+	isDead= n;
+    }
+    public String getName(){
+	return name;
+    }
+    public void setName( String n){
+	name= n;
+    }
+    public String getPerson(){
+	return person;
+    }
+    public void setPerson(String n){
+	person= n;
+    }
+    public Area getPlace(){
+	return place;
+    }
+    public void setPlace(Area n){
+	place=n;
+    }
+    public ArrayList<Item> getInv(){
+	return inventory;
+    }
+    public void setInv(ArrayList<Item> n){
+	inventory= n;
+    }
+    public ArrayList<Status> getStatuses(){
+	return statuses;
+    }
+    public void setStatuses(ArrayList<Status> n){
+	statuses=n;
+    }
+    public ArrayList<Attacks> getAttks(){
+	return attks;
+    }
+    public void setAttks(ArrayList<Attacks> n){
+	attks=n;
+    }
+    public Weapon getWep(){
+	return wep;
+    }
+    public void setWep(Weapon n){
+	wep=n;
+    }
+    public Armor getArm(){
+	return arm;
+    }
+    public void setArm(Armor n){
+	arm=n;
+    }
+	
 }
