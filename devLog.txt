@@ -7,6 +7,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !!<Add to top please>!!
 
+5/31 : Battle showHp; User edit team <Cindy>
+
 5/30 : Some more to Attacks; created Battle; created User. <Cindy>
 
 5/29 : Interfacing, mas interfacing; <Sherry> 
