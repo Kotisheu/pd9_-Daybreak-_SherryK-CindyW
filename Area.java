@@ -10,3 +10,6 @@ public class abstract Area{
     protected int stepsbackwards;//steps to town behind
     
 }
+class village extends Area{
+
+}

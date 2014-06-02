@@ -1,3 +1,4 @@
-public class abstract Monster{
+public class abstract Monster extends Base{
+
 
 }

@@ -1,16 +1,16 @@
 public abstract class Base{
  
-    protected int hp,mp,lvl,exp,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
-    protected int bhp,bmp,bexp,bstr,bwis,bluck,bspd,bdef,bheight,bweight;//max amount/base amount depending : > (10)
-    protected boolean isDead;
-    protected String name;
-    protected String person;
-    protected Area place;
-    protected ArrayList<Item> inventory;// what items do you have 
-    protected ArrayList<Status> statuses;// what buffs/debuffs are on you
-    protected Arraylist<Attacks> attks;//what attacks can you perform
-    protected Weapon wep;
-    protected Armor arm;
+    private int hp,mp,lvl,exp,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
+    private int bhp,bmp,bexp,bstr,bwis,bluck,bspd,bdef,bheight,bweight;//max amount/base amount depending : > (10)
+    private boolean isDead;
+    private String name;
+    private String person;
+    private Area place;
+    private ArrayList<Item> inventory;// what items do you have 
+    private ArrayList<Status> statuses;// what buffs/debuffs are on you
+    private Arraylist<Attacks> attks;//what attacks can you perform
+    private Weapon wep;
+    private Armor arm;
     public int getHp(){
 	return hp;
     }
