@@ -11,7 +11,7 @@ public class Attacks {
 
     //People will have certain attacks in their attack ArrayList based on their class
 
-    public int norm ( Base tar, Base atkr ) {
+    public int Norm ( Base tar, Base atkr ) {
 	//values will probably change b/c of whatever values we use
 	//strength of atk depends on attack
 	//defense is 1/2defense + random range 1-4;
@@ -24,11 +24,14 @@ public class Attacks {
 	tar.setHp ( tar.getHp() - dam ); //lose hp
 
 	check(tar);
-
+	/*::::::INPUT CHECK FOR TARGET DEAD OR NOT::::::
+	  if ( tar.getHp() <= 0 ) 
+	      tar.kddkaldk( tralse );
+	*/
 	return dam;
     }
       
-    public int mag ( Base tar, Base atkr ) {
+    public int Mag ( Base tar, Base atkr ) {
 	int dam = atkr.getWis()*_multiplier - 
 	    ( tar.getDef()*.5 + Math.random()*4 );
 	
@@ -37,13 +40,7 @@ public class Attacks {
 	tar.setHp ( tar.getHp() - dam ); //lose hp
 	
 	check(tar);
-
 	return dam;
-    }
-
-    public void check() { //Is it dead?
-	if ( _tar.getHp() <= 0 )  
-	    _tar.setDead();
     }
 
     public int getPri() {

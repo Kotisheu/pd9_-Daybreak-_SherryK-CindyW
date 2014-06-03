@@ -5,14 +5,11 @@ public class Battles extends User {
     
     private ArrayList<Base> MONSTERS; //Dependent on location
     private ArrayList<Base> _eInPlay; //Enemies in battle
-    private boolean end = true;
     private Act actTurns;
     private Queue turn;
 
-    public Battle( Area l ) {
-	end = false;
-	MONSTERS = l.getMons(); //get monster list from area
-	init( MONSTERS ); 
+    public Battle() {
+	init( MONSTERS );
 	showHp();
     }
 
@@ -30,19 +27,14 @@ public class Battles extends User {
 	String pla = "<><><>--TEAM--<><><>"; //Team & HP
 
 	for ( int i = 0; i < _eInPlay.size(); i++ ) {
-	    if ( !ene.getDead() )
-		ene += _eInPlay.get(i).getName() + ": " 
-		    + _eInPlay.get(i).getHp + "\n"; //list alive enemies
-
-	    else 
-		remE( _eInPlay.get(i) ); // remove dead enemies
+	    ene += _eInPlay.get(i).getName() + ": " 
+		+ _eInPlay.get(i).getHp + "\n";
 	}
 	ene += "---------------------"
 
 	for ( int i = 0; i < _team.size(); i++ ) {
-	    if ( !pla.getDead() )
-		pla += getTeam().get(i).getName() + ": " 
-		    + getTeam().get(i).getHp + "\n"; //getTeam from User
+	    pla += getTeam().get(i).getName() + ": " 
+		+ getTeam().get(i).getHp + "\n"; //getTeam from User
 	}
 	pla += "--------------------";
 
@@ -51,21 +43,7 @@ public class Battles extends User {
 	System.out.println( pla );
     }    
 
-    public void remE( Base e ) { // remove enemy if it is in list
-	for ( int i = 0; i < _eInPlay.size(); i++ ) 
-	    if ( _eInPlay.get(i).equals(e) ) 
-		_eInPlay.remove(i);
-    }
-
-    public void setEnd( boolean a ) {
-	end = a;
-    }
     
-    public boolean isOver() { // is battle over?
-	if ( _eInPlay.size() == 0 ) 
-	    setEnd( true );
-	return end;
-    }
 
 }
 
