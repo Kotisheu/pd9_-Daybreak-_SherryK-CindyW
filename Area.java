@@ -1,6 +1,8 @@
-public class abstract Area{
-    protected ArrayList<Items> store;//what items are availiable in this place
-    protected ArrayList<Monsters> munstars;// what monsters are here
+import java.util.ArrayList;
+
+public abstract class Area{
+    protected ArrayList<Item> store;//what items are availiable in this place
+    protected ArrayList<Monster> munstars;// what monsters are here
     protected ArrayList<Trivia> people;// trivia given by talking to random people in towns :)
     protected boolean first; // is this first time here?- trigger event
     protected String name;

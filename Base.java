@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Base{
  
     protected int hp,mp,lvl,exp,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)

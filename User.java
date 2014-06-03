@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class User extends Game {
+public class User {
     
     private ArrayList<People> _avail; //available team members
     private ArrayList<People> _team; //the user's team in battle (up to 4);
