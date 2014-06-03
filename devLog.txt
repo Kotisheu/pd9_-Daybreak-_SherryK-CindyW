@@ -7,7 +7,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !!<Add to top please>!!
 
-6/3:
+6/3: Bug killing <Both> 
 
 6/2: Attack/battle stuff<Cindy>
 	Area/Item stuff<Sherry>
