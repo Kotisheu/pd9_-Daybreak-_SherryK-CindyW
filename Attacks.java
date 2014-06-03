@@ -2,15 +2,16 @@
 
 public class Attacks {
     
-    private int _pri; //how long it takes to use attack
-    private int _multiplier; //damage multiplier
-    private int _mag; //mp used
-    private Base _tar;
-    private Base _atkr;
+    protected _name;
+    protected int _pri; //how long it takes to use attack
+    protected int _multiplier; //damage multiplier
+    protected int _mag; //mp used
+    protected Base _tar;
+    protected Base _atkr;
 
     //People will have certain attacks in their attack ArrayList based on their class
 
-    public int Norm ( Base tar, Base atkr ) {
+    public int norm ( Base tar, Base atkr ) {
 	//values will probably change b/c of whatever values we use
 	//strength of atk depends on attack
 	//defense is 1/2defense + random range 1-4;
@@ -23,14 +24,11 @@ public class Attacks {
 	tar.setHp ( tar.getHp() - dam ); //lose hp
 
 	check(tar);
-	/*::::::INPUT CHECK FOR TARGET DEAD OR NOT::::::
-	  if ( tar.getHp() <= 0 ) 
-	      tar.kddkaldk( tralse );
-	*/
+
 	return dam;
     }
       
-    public int Mag ( Base tar, Base atkr ) {
+    public int mag ( Base tar, Base atkr ) {
 	int dam = atkr.getWis()*_multiplier - 
 	    ( tar.getDef()*.5 + Math.random()*4 );
 	
@@ -39,7 +37,13 @@ public class Attacks {
 	tar.setHp ( tar.getHp() - dam ); //lose hp
 	
 	check(tar);
+
 	return dam;
+    }
+
+    public void check() { //Is it dead?
+	if ( _tar.getHp() <= 0 )  
+	    _tar.setDead();
     }
 
     public int getPri() {

@@ -3,36 +3,34 @@ import java.util.ArrayList;
 
 public class User extends Game {
     
-    private ArrayList<Base> _avail; //available team members
-    private ArrayList<Base> _team; //the user's team in battle (up to 4);
+    private ArrayList<People> _avail; //available team members
+    private ArrayList<People> _team; //the user's team in battle (up to 4);
     
     public User() {
-	_avail = new ArrayList<Base>();
-	_team = new ArrayList<Base>();
+	_avail = new ArrayList<People>();
+	_team = new ArrayList<People>();
     }
 
-    public ArrayList<Base> addTeam( int i ) {
-	if ( _team.length < 4 ) {
+    public ArrayList<People> addTeam( int i ) {
+	if ( _team.size() < 4 ) {
 	    //add person to team and remove from list of available
-	    _team.add( i );
+	    _team.add( _avail.get(i) );
 	    _avail.remove( i );
 	}
 	return _team;
     }
 
-    public Base remTeam( int i ) {
+    public void remTeam( int i ) {
 	//return removed person; remove from team and add to list of available
-	if ( _team.length != 1 )
-	    return _avail.add( _team.remove(i) );
-
-	return null;
+	if ( _team.size() != 1 ) 
+	    _avail.add( _team.remove(i) );
     }
 
-    public ArrayList<Base> getTeam() {
+    public ArrayList<People> getTeam() {
 	return _team;
     }
     
-    public ArrayList<Base> getAvail() {
+    public ArrayList<People> getAvail() {
 	return _avail;
     }
 
