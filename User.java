@@ -5,10 +5,12 @@ public class User {
     
     private ArrayList<People> _avail; //available team members
     private ArrayList<People> _team; //the user's team in battle (up to 4);
+    private Area _loc;
     
     public User() {
 	_avail = new ArrayList<People>();
 	_team = new ArrayList<People>();
+	_loc = new Village();
     }
 
     public ArrayList<People> addTeam( int i ) {
@@ -32,6 +34,10 @@ public class User {
     
     public ArrayList<People> getAvail() {
 	return _avail;
+    }
+
+    public void setLoc( Area l ) {
+	_loc = l;
     }
 
 }

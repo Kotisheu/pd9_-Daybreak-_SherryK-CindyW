@@ -10,7 +10,7 @@ public abstract class Base{
     protected Area place;
     protected ArrayList<Item> inventory;// what items do you have 
     protected ArrayList<Status> statuses;// what buffs/debuffs are on you
-    protected Arraylist<Attacks> attks;//what attacks can you perform
+    protected ArrayList<Attacks> attks;//what attacks can you perform
     protected Weapon wep;
     protected Armor arm;
     public int getHp(){

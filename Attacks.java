@@ -17,7 +17,7 @@ public class Attacks {
 	//defense is 1/2defense + random range 1-4;
 	String det = atkr.getName() + " dealt ";
 	int dam = 
-	    atkr.getAtk()*_multiplier - 
+	    atkr.getStr()*_multiplier - 
 	    ( (int) (tar.getDef()*.5) + (int)(Math.random()*4) );
 	
 	atkr.setMp ( atkr.getMp() - _mag ); //lose mp
@@ -31,7 +31,7 @@ public class Attacks {
 	return det;
     }
       
-    public int mag ( Base tar, Base atkr ) {
+    public String mag ( Base tar, Base atkr ) {
 	String det = atkr.getName() + " dealt ";
 
 	int dam = atkr.getWis()*_multiplier - 
@@ -50,7 +50,7 @@ public class Attacks {
 
     public void check( Base b ) { //Is it dead?
 	if ( b.getHp() <= 0 )  
-	    b.setDead();
+	    b.setDead(true);
     }
 
     public int getPri() {

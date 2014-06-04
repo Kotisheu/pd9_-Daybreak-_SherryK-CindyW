@@ -7,7 +7,6 @@ public class Game {
     public Game() {    
 	if ( prompt() ) {
 	    //Start a new Game with a new User
-	    player = new User();
 	    newGame();
 	}
 	else {
@@ -27,9 +26,10 @@ public class Game {
 	try {
 	    response = input.readLine();
 	    if ( !response.equals( "y" ) && !response.equals( "n" ) )
-		prompt();
-	    else if ( response.equals( "y" ) )
-		return true;
+		return prompt();
+	    else if ( response.equals( "y" ) ) { 
+		System.out.println("yes");
+		return true; }
 	    else 
 		return false;
 		//loadGame();
@@ -42,6 +42,8 @@ public class Game {
     }
       
     public void newGame() {
+	player = new User();
+
 	System.out.println("Random story text\n");
 	System.out.print("Young adventurer, what is your name?\n");
 
