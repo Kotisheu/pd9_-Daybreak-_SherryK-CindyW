@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Village extends Area{
+public class Village extends Area {
 
     //I just fleshed this our so i could try testing....
 

@@ -66,3 +66,129 @@ public class Attacks {
     }
 
 }
+
+public class A1 extends Attacks {
+    
+    public A1 ( Base tar, Base atkr ) {
+	
+	_name = "Smash";
+	_pri = 1;
+	_multiplier = 1;
+	_mag = 0;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	norm( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}
+
+public class A2 extends Attacks {
+    
+    public A2 ( Base tar, Base atkr ) {
+	
+	_name = "Holy Smash";
+	_pri = 2;
+	_multiplier = 1.5;
+	_mag = 2;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	norm( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}
+
+public class A3 extends Attacks {
+    
+    public A3 ( Base tar, Base atkr ) {
+	
+	_name = "Omni Smash";
+	_pri = 3;
+	_multiplier = 2;
+	_mag = 5;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	norm( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}
+
+public class M1 extends Attacks {
+    
+    public M1 ( Base tar, Base atkr ) {
+	
+	_name = "Cast";
+	_pri = 1;
+	_multiplier = 1;
+	_mag = 3;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	mag( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}
+
+public class M2 extends Attacks {
+    
+    public M2 ( Base tar, Base atkr ) {
+	
+	_name = "Blast";
+	_pri = 2;
+	_multiplier = 1.5;
+	_mag = 5;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	mag( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}
+
+public class M2 extends Attacks {
+    
+    public M2 ( Base tar, Base atkr ) {
+	
+	_name = "Divine Strike";
+	_pri = 3;
+	_multiplier = 3;
+	_mag = 10;
+	_tar = tar;
+	_atkr = atkr;
+
+    }
+
+    public void declare() {
+	
+	mag( _tar, _atkr ); //declare a normal attack
+
+    }
+
+}

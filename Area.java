@@ -16,18 +16,17 @@ public abstract class Area{
     }
 }
 //Wait this should be in a different file? or no...
-// class Village extends Area{
-//     //I just fleshed this our so i could try testing....
-//     public Village() {
-// 	first = true;
-// 	town = true;
-// 	munstars = new ArrayList<Monster>();
-// 	store = new ArrayList<Item>();
-// 	people = new ArrayList<Trivia>();
-// 	step = 0;
-// 	stepstowards = 10;
-// 	stepsbackwards = 0;
-// 	System.out.println( "random story?" );
-//     }
-
-// }
+class Village extends Area{
+    //I just fleshed this out so i could try testing....
+    public Village() {
+	first = true;
+	town = true;
+	munstars = new ArrayList<Monster>();
+	store = new ArrayList<Item>();
+	people = new ArrayList<Trivia>();
+	step = 0;
+	stepstowards = 10;
+	stepsbackwards = 0;
+	System.out.println( "random story?" );
+    }
+ }
