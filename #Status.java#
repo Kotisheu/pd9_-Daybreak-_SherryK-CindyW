@@ -1,0 +1,12 @@
+public abstract class Status{
+    public abstract String affect(Base aff){//affected
+    }
+    public abstract String affect( Base cause, Base aff){
+    }
+}
+class Sleep extends Status{
+    public String affect( Base aff){
+
+    }
+    public String affect( Base cause, Base aff){
+    }
