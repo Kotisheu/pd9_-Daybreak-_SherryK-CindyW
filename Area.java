@@ -16,7 +16,7 @@ public abstract class Area{
     public ArrayList<Monster> getMon() {
 	return munstars;
     }
-    public Area MoveFoward(){
+    public Area moveFoward(){
 	if (town){
 	    return nextplace;
 	}
@@ -68,5 +68,67 @@ class Grassland extends Area{
 	}
 	if(step==stepsbackwards){
 	}
+    }
+}
+class Kaetown extends Area{
+    public Kaetown(){
+	town = true;
+    }
+    public Area Check(){
+    }
+}
+class Feywood extends Area{
+    public Feywood(){
+	town = false;
+    }
+    public Area Check(){
+    }
+}
+class Seaporte extends Area{
+    public Seaporte(){
+	town = true;
+    }
+    public Area Check(){
+    }
+}
+class Aguael extends Area{
+    public Aguael(){
+	town=false;
+    }
+    public Area Check(){
+    }
+}
+class Towntree extends Area{
+    public Towntree(){
+	town=true;
+    }
+    public Area Check(){
+    }
+}
+class Sans extends Area{
+    public Sans(){
+	town= false;
+    }
+    public Area Check(){
+    }
+}
+class Metro extends Area{
+    public Metro(){
+	town= true;
+    }
+    public Area Check(){
+    }
+}
+class Dessert extends Area{
+    public Dessert(){
+	town=false;
+    }
+    public Area Check(){
+    }
+}
+class Tower extends Area{
+    public Tower(){
+    }
+    public Area Check(){
     }
 }
