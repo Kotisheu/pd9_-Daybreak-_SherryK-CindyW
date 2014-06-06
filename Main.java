@@ -1,4 +1,7 @@
 public class Main extends Base{
-public Main(){
+    public void Main(){
+    }
+    public void Main(String n){
+	name=n;
+    }
 }
-  }

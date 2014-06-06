@@ -22,7 +22,7 @@ public abstract class Area{
 	}
 	else{ 
 	    step+=1;
-	    check();
+	    Check();
 	}
     }
     public abstract Area Check();
@@ -61,7 +61,7 @@ class Grassland extends Area{
 	stepsbackwards = 0;
 	System.out.println( "random story?" );
 	nextplace=new Kaetown();
-	backplace=village();
+	backplace=Village();
     }
     public Area Check(){
 	if (step == stepstowards){
