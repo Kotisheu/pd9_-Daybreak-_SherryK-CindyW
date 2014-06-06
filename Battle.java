@@ -1,15 +1,17 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class Battles extends User {
+public class Battle {
     
+    private User _user;
     private ArrayList<Base> MONSTERS; //Dependent on location
     private ArrayList<Base> _eInPlay; //Enemies in battle
     private boolean end = true;
     private Act actTurns;
     private Queue turn;
 
-    public Battle( Area l ) {
+    public Battle( User u; Area l ) {
+	_user = u;
 	end = false;
 	MONSTERS = l.getMons(); //get monster list from area
 	init( MONSTERS ); 
@@ -37,12 +39,12 @@ public class Battles extends User {
 	    else 
 		remE( _eInPlay.get(i) ); // remove dead enemies
 	}
-	ene += "---------------------"
+	ene += "---------------------";
 
 	for ( int i = 0; i < _team.size(); i++ ) {
 	    if ( !pla.getDead() )
-		pla += getTeam().get(i).getName() + ": " 
-		    + getTeam().get(i).getHp + "\n"; //getTeam from User
+		pla += u.getTeam().get(i).getName() + ": " 
+		    + u.getTeam().get(i).getHp + "\n"; //getTeam from User
 	}
 	pla += "--------------------";
 

@@ -16,7 +16,7 @@ public class Game {
     
     //Whoosh! prompt the player if they would like to start a new game.
     public boolean prompt() {
-	System.out.print("Would you like to start a new game? <y/n>");
+	System.out.print("Would you like to start a new game? <y/n>\n");
 
 	BufferedReader input = 
 	    new BufferedReader( new InputStreamReader(System.in) );
@@ -28,7 +28,6 @@ public class Game {
 	    if ( !response.equals( "y" ) && !response.equals( "n" ) )
 		return prompt();
 	    else if ( response.equals( "y" ) ) { 
-		System.out.println("yes");
 		return true; }
 	    else 
 		return false;
