@@ -1,4 +1,4 @@
-public class Main extends Base{
+public class Main extends People{
     public Main(){
     }
     public Main(String n){
