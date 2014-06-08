@@ -3,5 +3,6 @@ public class Main extends People{
     }
     public Main(String n){
 	name=n;
+	setPlace( new Village() );
     }
 }

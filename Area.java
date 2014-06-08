@@ -1,3 +1,6 @@
+//EDIT TEMPERARY RETURN STATEMNTS AT MOVEFORWARD AND CHECK() METHODS
+//ALSO LOOK AT LINES 20-26 BECAUSE LEFT YOU A MESSAGE =w=
+
 import java.util.ArrayList;
 
 public abstract class Area{
@@ -12,7 +15,17 @@ public abstract class Area{
     protected int stepsbackwards;//steps to town behind
     protected Area nextplace;
     protected Area backplace;
-    
+  
+    /*
+      SHERRY
+      I think there should be variables for these, since we shouldnt be creating new areas when they go back. Right? Im not sure how you want to do this, but originally you had backplace = Village(), which doesnt work because it should be new Village(), but i dont know if we want to create a new one. 
+IDK.Stuff works now so yey?
+    */
+    protected static Village village = new Village();
+    protected static Grassland grassland = new Grassland();
+    protected static Kaetown kaetown = new Kaetown();
+    //^^
+
     public ArrayList<Monster> getMon() {
 	return munstars;
     }
@@ -24,9 +37,21 @@ public abstract class Area{
 	    step+=1;
 	    Check();
 	}
+
+	//TEMPORARY RETURN STATEMENT
+	return null;
     }
     public abstract Area Check();
 
+
+    public static void main( String[] args ) {
+    
+	Area a = village;
+	Area b = grassland;
+	System.out.println( grassland );
+
+    }
+    
 }
 
 class Village extends Area{
@@ -40,11 +65,12 @@ class Village extends Area{
 	step = 0;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	System.out.println( "random story?" );
-	nextplace=new Grassland();
+	nextplace= grassland;
 	backplace=null;
     }
     public Area Check(){//town no need to do anything
+	//TEMPORARY RETURN 
+	return null;
     }
 
 }
@@ -59,15 +85,16 @@ class Grassland extends Area{
 	step = 1;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	System.out.println( "random story?" );
-	nextplace=new Kaetown();
-	backplace=Village();
+	nextplace=kaetown;
+	backplace=village;
     }
     public Area Check(){
 	if (step == stepstowards){
 	}
 	if(step==stepsbackwards){
 	}
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Kaetown extends Area{
@@ -75,6 +102,8 @@ class Kaetown extends Area{
 	town = true;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Feywood extends Area{
@@ -82,6 +111,8 @@ class Feywood extends Area{
 	town = false;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Seaporte extends Area{
@@ -89,6 +120,8 @@ class Seaporte extends Area{
 	town = true;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Aguael extends Area{
@@ -96,6 +129,8 @@ class Aguael extends Area{
 	town=false;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;	
     }
 }
 class Towntree extends Area{
@@ -103,6 +138,8 @@ class Towntree extends Area{
 	town=true;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Sans extends Area{
@@ -110,6 +147,8 @@ class Sans extends Area{
 	town= false;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Metro extends Area{
@@ -117,18 +156,26 @@ class Metro extends Area{
 	town= true;
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Dessert extends Area{
     public Dessert(){
 	town=false;
     }
-    public Area Check(){
+    public Area Check(){	
+	//TEMPORARY RETURN 
+	return null;
     }
 }
 class Tower extends Area{
     public Tower(){
     }
     public Area Check(){
+	//TEMPORARY RETURN 
+	return null;
     }
 }
+
+				       

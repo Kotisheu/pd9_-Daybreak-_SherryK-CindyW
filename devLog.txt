@@ -7,6 +7,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !!<Add to top please>!!
 
+6/8: Bugs killed(hopefully); User is now initialized in Village. <Cindy>
+
 6/3: Bug killing <Both> 
 
 6/2: Attack/battle stuff<Cindy>

@@ -11,12 +11,13 @@ public class User {
     public User() {
 	_avail = new ArrayList<People>();
 	_team = new ArrayList<People>();
-	_loc = new Village();
-
+	you = new Main("Soren");
     }
     public User(String name){
 	this();
 	you= new Main(name);
+	//	System.out.println( you.getPlace() );
+	_loc = you.getPlace();
     }
 
     public void moveFd() {

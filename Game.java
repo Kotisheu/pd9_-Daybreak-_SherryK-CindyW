@@ -41,7 +41,7 @@ public class Game {
     }
       
     public void newGame() {
-	player = new User();
+
 
 	System.out.println("Random story text\n");
 	System.out.print("Young adventurer, what is your name?\n");
@@ -55,10 +55,12 @@ public class Game {
 	    //input is not empty string/null.
 	    String tmp = input.readLine();
 	    if ( !tmp.equals( "" ) )
-		name = tmp;
-	    else 
+		player = new User(tmp);
+	    else  {
 		System.out.println( "<Default name>" );
-	    //Guy player = new player( name );
+		player = new User();
+		//Guy player = new player( name );
+	    }
 	} 
 	catch (IOException ioe) {
 	    System.out.println("Error reading input.");
