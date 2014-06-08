@@ -1,7 +1,7 @@
 public class Main extends Base{
-    public void Main(){
+    public Main(){
     }
-    public void Main(String n){
+    public Main(String n){
 	name=n;
     }
 }

@@ -4,7 +4,7 @@ public class Attacks {
     
     protected String _name;
     protected int _pri; //how long it takes to use attack
-    protected int _multiplier; //damage multiplier
+    protected double _multiplier; //damage multiplier
     protected int _mag; //mp used
     protected Base _tar;
     protected Base _atkr;
@@ -17,7 +17,7 @@ public class Attacks {
 	//defense is 1/2defense + random range 1-4;
 	String det = atkr.getName() + " dealt ";
 	int dam = 
-	    atkr.getStr()*_multiplier - 
+	    (int) ( atkr.getStr()*_multiplier ) - 
 	    ( (int) (tar.getDef()*.5) + (int)(Math.random()*4) );
 	
 	atkr.setMp ( atkr.getMp() - _mag ); //lose mp
@@ -34,7 +34,8 @@ public class Attacks {
     public String mag ( Base tar, Base atkr ) {
 	String det = atkr.getName() + " dealt ";
 
-	int dam = atkr.getWis()*_multiplier - 
+	int dam = 
+	    (int) ( atkr.getWis()*_multiplier ) - 
 	    ( (int)(tar.getDef()*.5) + (int)(Math.random()*4) );
 	
 	atkr.setMp ( tar.getMp() - _mag ); //use mp
@@ -67,7 +68,7 @@ public class Attacks {
 
 }
 
-public class A1 extends Attacks {
+class A1 extends Attacks {
     
     public A1 ( Base tar, Base atkr ) {
 	
@@ -88,7 +89,7 @@ public class A1 extends Attacks {
 
 }
 
-public class A2 extends Attacks {
+class A2 extends Attacks {
     
     public A2 ( Base tar, Base atkr ) {
 	
@@ -109,7 +110,7 @@ public class A2 extends Attacks {
 
 }
 
-public class A3 extends Attacks {
+class A3 extends Attacks {
     
     public A3 ( Base tar, Base atkr ) {
 	
@@ -130,7 +131,7 @@ public class A3 extends Attacks {
 
 }
 
-public class M1 extends Attacks {
+class M1 extends Attacks {
     
     public M1 ( Base tar, Base atkr ) {
 	
@@ -151,7 +152,7 @@ public class M1 extends Attacks {
 
 }
 
-public class M2 extends Attacks {
+class M2 extends Attacks {
     
     public M2 ( Base tar, Base atkr ) {
 	
@@ -172,9 +173,9 @@ public class M2 extends Attacks {
 
 }
 
-public class M2 extends Attacks {
+class M3 extends Attacks {
     
-    public M2 ( Base tar, Base atkr ) {
+    public M3 ( Base tar, Base atkr ) {
 	
 	_name = "Divine Strike";
 	_pri = 3;
