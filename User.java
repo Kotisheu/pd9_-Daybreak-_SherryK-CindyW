@@ -50,8 +50,12 @@ public class User {
 	return _avail;
     }
 
-    public void setLoc( Area l ) {
-	_loc = l;
+    // public void setLoc( Area l ) {
+    // 	you.setPlace( l );
+    // }
+
+    public Area getLoc() {
+	return you.getPlace();
     }
 
 }
