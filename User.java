@@ -12,10 +12,14 @@ public class User {
 	_avail = new ArrayList<People>();
 	_team = new ArrayList<People>();
 	you = new Main("Soren");
+	_avail.add(you);
+	_team.add(you);
     }
     public User(String name){
 	this();
 	you= new Main(name);
+	_avail.add(you);
+	_team.add(you);
 	//	System.out.println( you.getPlace() );
 	_loc = you.getPlace();
     }
@@ -24,8 +28,6 @@ public class User {
 	you.setPlace(you.getPlace().moveFoward());
     }
 	
-	
-
     public ArrayList<People> addTeam( int i ) {
 	if ( _team.size() < 4 ) {
 	    //add person to team and remove from list of available
