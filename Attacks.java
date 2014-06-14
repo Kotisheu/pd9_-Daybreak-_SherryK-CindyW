@@ -1,9 +1,10 @@
 //**NOTE: attacks under this class should have a constructer specifying target and attacker (and other stuff listed in Attacks variables). Has method Declare to use norm attack (uses str) or mag attack(uses wis) when popped out of heap.
 
-public class Attacks {
+public abstract class Attacks {
     
     protected String _name;
     protected int _pri; //how long it takes to use attack
+    protected int tmpPri;
     protected double _multiplier; //damage multiplier
     protected int _mag; //mp used
     protected Base _tar;
@@ -55,7 +56,11 @@ public class Attacks {
     }
 
     public int getPri() {
-	return _pri;
+	return tmpPri;
+    }
+
+    public void setPri( int i ) {
+	tmpPri = i;
     }
 
     public Base getUser() {
@@ -66,6 +71,8 @@ public class Attacks {
 	return _tar;
     }
 
+    public abstract void declare();
+
 }
 
 class A1 extends Attacks {
@@ -73,7 +80,7 @@ class A1 extends Attacks {
     public A1 ( Base tar, Base atkr ) {
 	
 	_name = "Smash";
-	_pri = 1;
+	_pri = tmpPri = 1;
 	_multiplier = 1;
 	_mag = 0;
 	_tar = tar;
@@ -83,7 +90,8 @@ class A1 extends Attacks {
 
     public void declare() {
 	
-	norm( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    norm( _tar, _atkr ); //declare a normal attack
 
     }
 
@@ -94,7 +102,7 @@ class A2 extends Attacks {
     public A2 ( Base tar, Base atkr ) {
 	
 	_name = "Holy Smash";
-	_pri = 2;
+	_pri = tmpPri = 2;
 	_multiplier = 1.5;
 	_mag = 2;
 	_tar = tar;
@@ -104,7 +112,8 @@ class A2 extends Attacks {
 
     public void declare() {
 	
-	norm( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    norm( _tar, _atkr ); //declare a normal attack
 
     }
 
@@ -115,7 +124,7 @@ class A3 extends Attacks {
     public A3 ( Base tar, Base atkr ) {
 	
 	_name = "Omni Smash";
-	_pri = 3;
+	_pri = tmpPri = 3;
 	_multiplier = 2;
 	_mag = 5;
 	_tar = tar;
@@ -125,7 +134,8 @@ class A3 extends Attacks {
 
     public void declare() {
 	
-	norm( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    norm( _tar, _atkr ); //declare a normal attack
 
     }
 
@@ -136,7 +146,7 @@ class M1 extends Attacks {
     public M1 ( Base tar, Base atkr ) {
 	
 	_name = "Cast";
-	_pri = 1;
+	_pri = tmpPri = 1;
 	_multiplier = 1;
 	_mag = 3;
 	_tar = tar;
@@ -146,7 +156,8 @@ class M1 extends Attacks {
 
     public void declare() {
 	
-	mag( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    mag( _tar, _atkr ); //declare a normal attack
 
     }
 
@@ -157,7 +168,7 @@ class M2 extends Attacks {
     public M2 ( Base tar, Base atkr ) {
 	
 	_name = "Blast";
-	_pri = 2;
+	_pri = tmpPri = 2;
 	_multiplier = 1.5;
 	_mag = 5;
 	_tar = tar;
@@ -167,7 +178,8 @@ class M2 extends Attacks {
 
     public void declare() {
 	
-	mag( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    mag( _tar, _atkr ); //declare a normal attack
 
     }
 
@@ -178,7 +190,7 @@ class M3 extends Attacks {
     public M3 ( Base tar, Base atkr ) {
 	
 	_name = "Divine Strike";
-	_pri = 3;
+	_pri = tmpPri = 3;
 	_multiplier = 3;
 	_mag = 10;
 	_tar = tar;
@@ -188,7 +200,8 @@ class M3 extends Attacks {
 
     public void declare() {
 	
-	mag( _tar, _atkr ); //declare a normal attack
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+	    mag( _tar, _atkr ); //declare a normal attack
 
     }
 
