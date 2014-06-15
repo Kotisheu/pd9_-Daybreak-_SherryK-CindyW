@@ -1,5 +1,7 @@
 public class Main extends People{
     public Main(){
+    	super();
+    	
 	person="You";
     
 	name="bob";
