@@ -6,7 +6,6 @@ class Slime extends Monster{
     public Slime(){
 	name= "Slim";
 	person="Slime";
-<<<<<<< HEAD
 	bhp=hp=19+(int)(Math.random()*lvl*10);
 	bmp=mp=17+(int)(Math.random()*lvl*10);
 	bstr=str= 3+(int)(Math.random()*lvl*5);
@@ -14,15 +13,6 @@ class Slime extends Monster{
 	bluck=luk=4+(int)(Math.random()*lvl*5);
 	bspd=spd=3+(int)(Math.random()*lvl*5);
 	bdef=def=5+(int)(Math.random()*lvl*5);
-=======
-	bhp=hp=23+(int)(Math.random()*lvl*10);
-	bmp=mp=16+(int)(Math.random()*lvl*10);
-	bstr=str= 6+(int)(Math.random()*lvl*5);
-	bwis=wis=5+(int)(Math.random()*lvl*5);
-	bluck=luk=1+(int)(Math.random()*lvl*5);
-	bspd=spd=4+(int)(Math.random()*lvl*5);
-	bdef=def=2+(int)(Math.random()*lvl*5);
->>>>>>> 4e9eb84bd948b202aeb1a01bdb853995896f6332
 	lvl=1+((int) (Math.random()*5));
 	bheight=height=18;//cm
 	bweight=weight=2;//kg
@@ -66,7 +56,6 @@ class Kids extends Monster{
     public Kids(){
 	name= "Kid";
 	person="Child";
-<<<<<<< HEAD
 	bhp=hp=39+(int)(Math.random()*lvl*12);
 	bmp=mp=25+(int)(Math.random()*lvl*12);
 	bstr=str= 11+(int)(Math.random()*lvl*6);
@@ -75,16 +64,6 @@ class Kids extends Monster{
 	bspd=spd=8+(int)(Math.random()*lvl*6);
 	bdef=def=11+(int)(Math.random()*lvl*6);
 	lvl=3+((int) (Math.random()*6));
-=======
-	bhp=hp=32+(int)(Math.random()*lvl*11);
-	bmp=mp=19+(int)(Math.random()*lvl*11);
-	bstr=str= 8+(int)(Math.random()*lvl*6);
-	bwis=wis=5+(int)(Math.random()*lvl*6);
-	bluck=luk=4+(int)(Math.random()*lvl*6);
-	bspd=spd=2+(int)(Math.random()*lvl*6);
-	bdef=def=2+(int)(Math.random()*lvl*6);
-	lvl=2+((int) (Math.random()*6));
->>>>>>> 4e9eb84bd948b202aeb1a01bdb853995896f6332
 	bheight=height=114;//cm
 	bweight=weight=25;//kg
 	isDead=false;
@@ -102,7 +81,6 @@ class Goblin extends Monster{
     public Goblin(){
 	name= "Gobs";
 	person="Goblin";
-<<<<<<< HEAD
 	bhp=hp=41+(int)(Math.random()*lvl*13);
 	bmp=mp=40+(int)(Math.random()*lvl*13);
 	bstr=str= 7+(int)(Math.random()*lvl*7);
@@ -138,18 +116,6 @@ class Monkey extends Monster{
 	lvl=5+((int) (Math.random()*5));
 	bheight=height=75;//cm
 	bweight=weight=30;//kg
-=======
-	bhp=hp=23+(int)(Math.random()*lvl*10);
-	bmp=mp=16+(int)(Math.random()*lvl*10);
-	bstr=str= 8+(int)(Math.random()*lvl*5);
-	bwis=wis=5+(int)(Math.random()*lvl*5);
-	bluck=luk=1+(int)(Math.random()*lvl*5);
-	bspd=spd=4+(int)(Math.random()*lvl*5);
-	bdef=def=2+(int)(Math.random()*lvl*5);
-	lvl=1+((int) (Math.random()*5));
-	bheight=height=18;//cm
-	bweight=weight=2;//kg
->>>>>>> 4e9eb84bd948b202aeb1a01bdb853995896f6332
 	isDead=false;
 	exp=5+lvl;
 	wep= null;
@@ -165,7 +131,6 @@ class Camper extends Monster{
     public Camper(){
 	name= "Campi";
 	person="Camper";
-<<<<<<< HEAD
 	bhp=hp=73+(int)(Math.random()*lvl*15);
 	bmp=mp=57+(int)(Math.random()*lvl*15);
 	bstr=str= 10+(int)(Math.random()*lvl*8);
@@ -402,18 +367,6 @@ class Fat extends Monster{//uh :D
 	lvl=15+((int) (Math.random()*6));
 	bheight=height=148;//cm
 	bweight=weight=100;//kg
-=======
-	bhp=hp=23+(int)(Math.random()*lvl*11);
-	bmp=mp=16+(int)(Math.random()*lvl*11);
-	bstr=str= 10+(int)(Math.random()*lvl*6);
-	bwis=wis=5+(int)(Math.random()*lvl*6);
-	bluck=luk=1+(int)(Math.random()*lvl*6);
-	bspd=spd=4+(int)(Math.random()*lvl*6);
-	bdef=def=2+(int)(Math.random()*lvl*6);
-	lvl=2+((int) (Math.random()*6));
-	bheight=height=18;//cm
-	bweight=weight=2;//kg
->>>>>>> 4e9eb84bd948b202aeb1a01bdb853995896f6332
 	isDead=false;
 	exp=5+lvl;
 	wep= new Stick();
