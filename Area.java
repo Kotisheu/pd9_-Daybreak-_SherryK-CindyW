@@ -21,11 +21,11 @@ public abstract class Area{
     protected static Area feywood = new Forest();
     protected static Area seaporte= new Towndos();
     protected static Area aguael= new Water(); 
-    protected static Area tree= new Towntres();
+    protected static Area towntree= new Towntres();
     protected static Area sans= new Mountain(); 
     protected static Area metro= new Towncuatro();
     protected static Area dessert = new Desert();
-    protected static Area towere= new Tower();
+    protected static Area tower= new Tower();
 
 
     public ArrayList<Monster> getMon() {
@@ -40,12 +40,20 @@ public abstract class Area{
 	    return Check();
 	}
 
-	//	return this;
+	return this;
     }
-
     public abstract Area Check();
-}
 
+
+    public static void main( String[] args ) {
+    
+	Area a = village;
+	Area b = grassland;
+	System.out.println( grassland );
+
+    }
+    
+}
 
 class Village extends Area{
     public Village() {
@@ -110,28 +118,11 @@ class Townuno extends Area{
 class Forest extends Area{
     public Forest(){
 	town = false;
-	first = false;
-	town= false;
-	name= "Stonehenge";
-	munstars = new ArrayList<Monster>();
-	store = null;//noneedforstore
-	citizens = null; // nopeople
-	step = 1;
-	stepstowards = 10;
-	stepsbackwards = 0;
-	nextplace=kaetown;
-	backplace=pellet;
-
     }
     public Area Check(){
-	if (step == stepstowards){
-	}
-	if(step==stepsbackwards){
-	}
 	return this;
     }
 }
-
 class Towndos extends Area{
     public Towndos(){
 	first = false;//if false, trigger event, change to true
@@ -153,94 +144,61 @@ class Towndos extends Area{
 }
 class Water extends Area{
     public Water(){
-
-	first = false;
-	town= false;
-	name= "Aguael";
-	munstars = new ArrayList<Monster>();
-	store = null;//noneedforstore
-	citizens = null; // nopeople
-	step = 1;
-	stepstowards = 10;
-	stepsbackwards = 0;
-	nextplace=tree;
-	backplace=seaporte;
+	town=false;
     }
     public Area Check(){
 	return this;	
     }
 }
-class Towntres extends Area{
-    public Towntres(){
+class Towntree extends Area{
+    public Towntree(){
 	first = false;//if false, trigger event, change to true
 	town = true;
-	name= "Town Tree";
+	name= "Pellet Town";
 	munstars = new ArrayList<Monster>();
 	store = new ArrayList<Item>();
 	citizens = new ArrayList<Trivia>();
 	step = 0;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	nextplace= sans;
-	backplace=aguael;
+	nextplace= grassland;
+	backplace=null;
 
     }
     public Area Check(){
 	return this;
     }
 }
-class Mountain extends Area{
-    public Mountain(){
-
-	first = false;
+class Sans extends Area{
+    public Sans(){
 	town= false;
-	name= "Sans";
-	munstars = new ArrayList<Monster>();
-	store = null;//noneedforstore
-	citizens = null; // nopeople
-	step = 1;
-	stepstowards = 10;
-	stepsbackwards = 0;
-	nextplace=metro;
-	backplace=tree;
-
     }
     public Area Check(){
 	return this;
     }
 }
-class Towncuatro extends Area{
-    public Towncuatro(){
+class Metro extends Area{
+    public Metro(){
 	first = false;//if false, trigger event, change to true
 	town = true;
-	name= "Metro";
+	name= "Pellet Town";
 	munstars = new ArrayList<Monster>();
 	store = new ArrayList<Item>();
 	citizens = new ArrayList<Trivia>();
 	step = 0;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	nextplace= dessert;
-	backplace=sans;
+	nextplace= grassland;
+	backplace=null;
 
     }
     public Area Check(){
 	return this;
     }
 }
-class Desert extends Area{
-    public Desert(){
-	first = false;
-	town= false;
-	name= "Dessert Desert";
-	munstars = new ArrayList<Monster>();
-	store = null;//noneedforstore
-	citizens = null; // nopeople
-	step = 1;
-	stepstowards = 10;
-	stepsbackwards = 0;
-	nextplace=towere;
-	backplace=metro;
+class Dessert extends Area{
+    public Dessert(){
+	town=false;
     }
     public Area Check(){	
 	return this;
@@ -250,15 +208,15 @@ class Tower extends Area{
     public Tower(){
 	first = false;//if false, trigger event, change to true
 	town = true;
-	name= "Towere";
+	name= "Pellet Town";
 	munstars = new ArrayList<Monster>();
 	store = new ArrayList<Item>();
 	citizens = new ArrayList<Trivia>();
 	step = 0;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	nextplace= null;
-	backplace= dessert;
+	nextplace= grassland;
+	backplace=null;
     }
     public Area Check(){
 	return this;
