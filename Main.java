@@ -4,16 +4,16 @@ public class Main extends People{
     
 	name="bob";
 	setPlace( new Village() );
-	bhp=hp=70+(int)(Math.random()*lvl*50);
-	bmp=mp=58+(int)(Math.random()*lvl*50);
-	bstr=str=7+(int)(Math.random()*lvl*10);
-	bwis=wis=5+(int)(Math.random()*lvl*10);
-	bluck=luk=8+(int)(Math.random()*lvl*10);
-	bspd=spd=5+(int)(Math.random()*lvl*10);
-	bdef=def=8+(int)(Math.random()*lvl*10);
+	bhp=hp=50+(int)(Math.random()*lvl*10);
+	bmp=mp=20+(int)(Math.random()*lvl*10);
+	bstr=str=7+(int)(Math.random()*lvl*5);
+	bwis=wis=5+(int)(Math.random()*lvl*5);
+	bluck=luk=8+(int)(Math.random()*lvl*5);
+	bspd=spd=5+(int)(Math.random()*lvl*5);
+	bdef=def=8+(int)(Math.random()*lvl*5);
 	lvl=1;
 	exp=0;
-	bexp= lvl*50;
+	bexp= 100;
 	bheight=height=175;//cm
 	bweight=weight=59;//kg
 	inventory= null;
@@ -30,5 +30,29 @@ public class Main extends People{
         this();
 	name=n;
 
+    }
+    //Heals and updates character stats
+    public void lvlUp() {
+	//Clear statuses
+	statuses = new ArrayList<Status>();
+	lvl += 1; //level increase
+	if ( lvl == 5 ) {
+	    Attacks atk = new A2();
+	    System.out.println(getName()+" has learned "+atk.getName()+ "!"); 
+	    attks.add(atk);
+	}
+	if ( lvl == 10 ) {
+	    Attacks atk = new A3();
+	    System.out.println(getName()+" has learned "+atk.getName()+ "!"); 
+	    attks.add(atk);
+	}
+	hp = bhp += 3;
+	mp = bmp += 2;
+	str = bstr += 2;
+	wis = bwis += 2;
+	luk = bluk += 2;
+	spd = bspd += 2;
+	def = bdef += 2;
+	res = bres += 2;
     }
 }
