@@ -8,7 +8,7 @@ class Slime extends Monster{
 	person="Slime";
 	bhp=hp=23+(int)(Math.random()*lvl*10);
 	bmp=mp=16+(int)(Math.random()*lvl*10);
-	bstr=str= 1+(int)(Math.random()*lvl*5);
+	bstr=str= 6+(int)(Math.random()*lvl*5);
 	bwis=wis=5+(int)(Math.random()*lvl*5);
 	bluck=luk=1+(int)(Math.random()*lvl*5);
 	bspd=spd=4+(int)(Math.random()*lvl*5);
@@ -33,7 +33,7 @@ class Kids extends Monster{
 	person="Child";
 	bhp=hp=32+(int)(Math.random()*lvl*11);
 	bmp=mp=19+(int)(Math.random()*lvl*11);
-	bstr=str= 5+(int)(Math.random()*lvl*6);
+	bstr=str= 8+(int)(Math.random()*lvl*6);
 	bwis=wis=5+(int)(Math.random()*lvl*6);
 	bluck=luk=4+(int)(Math.random()*lvl*6);
 	bspd=spd=2+(int)(Math.random()*lvl*6);
@@ -58,7 +58,7 @@ class Goblin extends Monster{
 	person="Goblin";
 	bhp=hp=23+(int)(Math.random()*lvl*10);
 	bmp=mp=16+(int)(Math.random()*lvl*10);
-	bstr=str= 1+(int)(Math.random()*lvl*5);
+	bstr=str= 8+(int)(Math.random()*lvl*5);
 	bwis=wis=5+(int)(Math.random()*lvl*5);
 	bluck=luk=1+(int)(Math.random()*lvl*5);
 	bspd=spd=4+(int)(Math.random()*lvl*5);
@@ -83,7 +83,7 @@ class Camper extends Monster{
 	person="Camper";
 	bhp=hp=23+(int)(Math.random()*lvl*11);
 	bmp=mp=16+(int)(Math.random()*lvl*11);
-	bstr=str= 1+(int)(Math.random()*lvl*6);
+	bstr=str= 10+(int)(Math.random()*lvl*6);
 	bwis=wis=5+(int)(Math.random()*lvl*6);
 	bluck=luk=1+(int)(Math.random()*lvl*6);
 	bspd=spd=4+(int)(Math.random()*lvl*6);
