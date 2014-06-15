@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 
@@ -88,12 +89,21 @@ public class Battle {
 		//****************************************************
 
 		//ADD STUFF
-		if ( response == 1 ) {}
+		if ( response == 1 ) {  }
+		if ( response == 2 ) {
+		    team.get(i).defend();
+		}
+		if ( response == 3 ) {
+		    
 		else {}
 	    }
 	}
 	System.out.println( "\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n" );
     }
+    
+    //Available attacks for person
+    public void listAtks( People p ) {
+	
 
     //Add attack to atkHeap
     public void addAtk( Attacks a ) {
@@ -158,8 +168,10 @@ public class Battle {
     }
     
     public boolean isOver() { // is battle over?
-	if ( _eInPlay.size() == 0 ) 
+	if ( _eInPlay.size() == 0 ) {
 	    setEnd( true );
+	    winnings(); //gain things
+	}
 	else if ( teamDead() ) {
 	    setEnd(true);
 	    System.out.println( "\tGAME OVER" );
@@ -168,6 +180,39 @@ public class Battle {
 	return end;
     }
 
+    //Get exp drop from monster and divide it to each alive person on team.
+    public int expGain() {
+	int gain = 0;
+	for ( Monster m : _eInPlay ) 
+	    gain += m.getExp();
+
+	int div = 0;
+	ArrayList<People> team = _user.getTeam();
+	for ( People p : team ) {
+	    if ( !p.getDead ) 
+		div += 1;
+	}
+	return gain/div;
+    }
+
+    //Get money drops from monsters
+    public int munGain() {
+	int gain = 0;
+	for ( Monster m : _eInPlay ) 
+	    gain += m.getMun();
+	return gain;
+    }    
+
+    //Player gain exp/munny!
+    public void winnings() {
+	ArrayList<People> team = _user.getTeam();
+	for ( People p : team ) {
+	    if ( !p.getDead ) 
+		p.gainExp( expGain() );
+	}
+	_user.addMun( munGain() );
+    }
+	    
     //Is team dead?
     public boolean teamDead() {
 	for ( People p : _user.getTeam() ) {
