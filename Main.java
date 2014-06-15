@@ -1,5 +1,9 @@
+import java.util.*;
+
 public class Main extends People{
     public Main(){
+	super();
+
 	person="You";
     
 	name="bob";
@@ -8,12 +12,12 @@ public class Main extends People{
 	bmp=mp=20+(int)(Math.random()*lvl*10);
 	bstr=str=7+(int)(Math.random()*lvl*5);
 	bwis=wis=5+(int)(Math.random()*lvl*5);
-	bluck=luk=8+(int)(Math.random()*lvl*5);
+	bluk=luk=8+(int)(Math.random()*lvl*5);
 	bspd=spd=5+(int)(Math.random()*lvl*5);
 	bdef=def=8+(int)(Math.random()*lvl*5);
 	lvl=1;
 	exp=0;
-	bexp= 50*lvl;
+	bexp= 100;
 	bheight=height=175;//cm
 	bweight=weight=59;//kg
 	inventory= null;
