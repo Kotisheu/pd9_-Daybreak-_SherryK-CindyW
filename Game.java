@@ -44,8 +44,8 @@ public class Game {
     }
       
     public void newGame() {
-	System.out.println("Random story text\n");
-	System.out.print("Young adventurer, what is your name?\n");
+	System.out.println("As you awake one morning, in your quaint village called Pallet Town, you hear a frightening noise outside your window. You rush out side just as your house comes crashing down. As you look around, you see the remains of your village burning down. You are still frozen with shock when you hear a faint cry for help. You look for the source of the cry and see someone reaching towards you. It's the town elder! When you get close enough to hear him, he says:  ");
+	System.out.print("'Ahh..Young adventurer, you are our only hope. What is your name?\n'");
 
 	BufferedReader input = 
 	    new BufferedReader( new InputStreamReader(System.in) );
