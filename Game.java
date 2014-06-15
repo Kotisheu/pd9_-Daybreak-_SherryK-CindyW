@@ -1,5 +1,6 @@
 import java.io.*;
 
+
 public class Game {
     
     private User player;
@@ -8,6 +9,8 @@ public class Game {
 	if ( prompt() ) {
 	    //Start a new Game with a new User
 	    newGame();
+	    while( true ) 
+		player.printMenu();
 	}
 	else {
 	    System.out.println( "stuff" ); 
@@ -41,8 +44,6 @@ public class Game {
     }
       
     public void newGame() {
-
-
 	System.out.println("Random story text\n");
 	System.out.print("Young adventurer, what is your name?\n");
 
@@ -67,6 +68,7 @@ public class Game {
 	    System.exit(1);
 	}
     }
+
 
     public static void main( String[] args ) {
 	Game g = new Game();
