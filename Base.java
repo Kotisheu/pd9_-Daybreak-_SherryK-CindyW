@@ -1,25 +1,31 @@
 import java.util.ArrayList;
 
 public abstract class Base{
- 
-    protected int hp,mp,lvl,exp,nxt,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
-    protected int bhp,bmp,bexp,bstr,bwis,bluck,bspd,bdef,bheight,bweight;//max amount/base amount depending : > (10)
+    
+    protected int hp,mp,lvl,exp,str,wis,luk,spd,def,res,mun,height,weight;//curent amount(12)
+    protected int bhp,bmp,bexp,bstr,bwis,bluk,bspd,bdef,bres,bheight,bweight;//max amount/base amount depending : > (10)
+    protected boolean canAtk; //can character attakc? (not waiting on a move)
+    protected boolean defing; // is character defending
     protected boolean isDead;
     protected String name;
     protected String person;
     protected Area place;
     protected ArrayList<Item> inventory;// what items do you have 
     protected ArrayList<Status> statuses;// what buffs/debuffs are on you
-    protected ArrayList<Attacks> attks;//what attacks can you perform
+    protected ArrayList<Attacks> attks = new ArrayList<Attacks>() {{ add(new A1()); }};//what attacks can you perform. Everyone can perform a simple attack
     protected Weapon wep;
     protected Armor arm;
     public int getHp(){
+	if ( hp < 0 ) 
+	    return 0;
 	return hp;
     }
     public void setHp(int n){
 	hp= n;
     }
     public int getMp(){
+	if ( mp < 0 )
+	    return 0;
 	return mp;
     }
     public void setMp(int n){
@@ -41,13 +47,15 @@ public abstract class Base{
     }
 
     public int getNxt(){ //Amount to next lvl
-	return nxt;
+	return bexp;
     }
     public void setNxt(int n){
-	nxt= n;
+	bexp= n;
     }
     
     public int getStr(){
+	if ( str < 0 )
+	    return 0;
 	return str;
     }
     public void setStr(int n){
@@ -55,6 +63,8 @@ public abstract class Base{
     }
     
     public int getWis(){
+	if ( wis < 0 )
+	    return 0;
 	return wis;
     }
     public void setWis(int n){
@@ -62,6 +72,8 @@ public abstract class Base{
     }
     
     public int getLuk(){
+	if ( luk < 0 )
+	    return 0;
 	return luk;
     }
     public void setLuk(int n){
@@ -69,6 +81,8 @@ public abstract class Base{
     }
     
     public int getSpd(){
+	if ( spd < 0 )
+	    return 0;
 	return spd;
     }
     public void setSpd(int n){
@@ -76,13 +90,26 @@ public abstract class Base{
     }
     
     public int getDef(){
+	if ( def < 0 )
+	    return 0;
 	return def;
     }
     public void setDef(int n){
 	def= n;
     }
+
+    public int getRes(){ //magic guard
+	if ( res < 0 )
+	    return 0;
+	return res;
+    }
+    public void setRes(int n){
+	res= n;
+    }
     
     public int getMun(){
+	if ( mun < 0 )
+	    return 0;
 	return mun;
     }
     public void setMun(int n){
@@ -90,6 +117,8 @@ public abstract class Base{
     }
     
     public int getHeight(){
+	if ( height < 0 )
+	    return 0;
 	return height;
     }
     public void setHeight(int n){
@@ -97,6 +126,8 @@ public abstract class Base{
     }
     
     public int getWeight(){
+	if ( height < 0 )
+	    return 0;
 	return weight;
     }
     public void setWeight(int n){
@@ -138,11 +169,11 @@ public abstract class Base{
 	bwis= n;
     }
     
-    public int getbLuck(){
-	return bluck;
+    public int getbLuk(){
+	return bluk;
     }
-    public void setbLuck(int n){
-	bluck= n;
+    public void setbLuk(int n){
+	bluk= n;
     }
     
     public int getbSpd(){
