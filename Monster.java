@@ -10,7 +10,7 @@ class Slime extends Monster{
 	bmp=mp=17+(int)(Math.random()*lvl*10);
 	bstr=str= 3+(int)(Math.random()*lvl*5);
 	bwis=wis=4+(int)(Math.random()*lvl*5);
-	bluck=luk=4+(int)(Math.random()*lvl*5);
+	bluk=luk=4+(int)(Math.random()*lvl*5);
 	bspd=spd=3+(int)(Math.random()*lvl*5);
 	bdef=def=5+(int)(Math.random()*lvl*5);
 	lvl=1+((int) (Math.random()*5));
@@ -35,7 +35,7 @@ class Snail extends Monster{
 	bmp=mp=14+(int)(Math.random()*lvl*11);
 	bstr=str= 3+(int)(Math.random()*lvl*5);
 	bwis=wis=2+(int)(Math.random()*lvl*5);
-	bluck=luk=5+(int)(Math.random()*lvl*5);
+	bluk=luk=5+(int)(Math.random()*lvl*5);
 	bspd=spd=2+(int)(Math.random()*lvl*5);
 	bdef=def=6+(int)(Math.random()*lvl*5);
 	lvl=2+((int) (Math.random()*5));
@@ -60,7 +60,7 @@ class Kids extends Monster{
 	bmp=mp=25+(int)(Math.random()*lvl*12);
 	bstr=str= 11+(int)(Math.random()*lvl*6);
 	bwis=wis=6+(int)(Math.random()*lvl*6);
-	bluck=luk=11+(int)(Math.random()*lvl*6);
+	bluk=luk=11+(int)(Math.random()*lvl*6);
 	bspd=spd=8+(int)(Math.random()*lvl*6);
 	bdef=def=11+(int)(Math.random()*lvl*6);
 	lvl=3+((int) (Math.random()*6));
@@ -85,7 +85,7 @@ class Goblin extends Monster{
 	bmp=mp=40+(int)(Math.random()*lvl*13);
 	bstr=str= 7+(int)(Math.random()*lvl*7);
 	bwis=wis=3+(int)(Math.random()*lvl*7);
-	bluck=luk=5+(int)(Math.random()*lvl*7);
+	bluk=luk=5+(int)(Math.random()*lvl*7);
 	bspd=spd=5+(int)(Math.random()*lvl*7);
 	bdef=def=6+(int)(Math.random()*lvl*7);
 	lvl=4+((int) (Math.random()*5));
@@ -110,7 +110,7 @@ class Monkey extends Monster{
 	bmp=mp=49+(int)(Math.random()*lvl*14);
 	bstr=str= 5+(int)(Math.random()*lvl*7);
 	bwis=wis=7+(int)(Math.random()*lvl*7);
-	bluck=luk=5+(int)(Math.random()*lvl*7);
+	bluk=luk=5+(int)(Math.random()*lvl*7);
 	bspd=spd=6+(int)(Math.random()*lvl*7);
 	bdef=def=4+(int)(Math.random()*lvl*7);
 	lvl=5+((int) (Math.random()*5));
@@ -135,7 +135,7 @@ class Camper extends Monster{
 	bmp=mp=57+(int)(Math.random()*lvl*15);
 	bstr=str= 10+(int)(Math.random()*lvl*8);
 	bwis=wis=10+(int)(Math.random()*lvl*8);
-	bluck=luk=8+(int)(Math.random()*lvl*8);
+	bluk=luk=8+(int)(Math.random()*lvl*8);
 	bspd=spd=11+(int)(Math.random()*lvl*8);
 	bdef=def=11+(int)(Math.random()*lvl*8);
 	lvl=6+((int) (Math.random()*6));
@@ -161,7 +161,7 @@ class Fish extends Monster{
 	bmp=mp=51+(int)(Math.random()*lvl*16);
 	bstr=str=6+(int)(Math.random()*lvl*9);
 	bwis=wis=5+(int)(Math.random()*lvl*9);
-	bluck=luk=6+(int)(Math.random()*lvl*9);
+	bluk=luk=6+(int)(Math.random()*lvl*9);
 	bspd=spd=5+(int)(Math.random()*lvl*9);
 	bdef=def=5+(int)(Math.random()*lvl*9);
 	lvl=7+((int) (Math.random()*5));
@@ -186,7 +186,7 @@ class Shark extends Monster{
 	bmp=mp=60+(int)(Math.random()*lvl*17);
 	bstr=str= 7+(int)(Math.random()*lvl*9);
 	bwis=wis=8+(int)(Math.random()*lvl*9);
-	bluck=luk=6+(int)(Math.random()*lvl*9);
+	bluk=luk=6+(int)(Math.random()*lvl*9);
 	bspd=spd=7+(int)(Math.random()*lvl*9);
 	bdef=def=10+(int)(Math.random()*lvl*9);
 	lvl=8+((int) (Math.random()*5));
@@ -211,7 +211,7 @@ class Pirate extends Monster{
 	bmp=mp=86+(int)(Math.random()*lvl*18);
 	bstr=str= 10+(int)(Math.random()*lvl*10);
 	bwis=wis=13+(int)(Math.random()*lvl*10);
-	bluck=luk=12+(int)(Math.random()*lvl*10);
+	bluk=luk=12+(int)(Math.random()*lvl*10);
 	bspd=spd=11+(int)(Math.random()*lvl*10);
 	bdef=def=14+(int)(Math.random()*lvl*10);
 	lvl=9+((int) (Math.random()*6));
@@ -236,7 +236,7 @@ class Goat extends Monster{
 	bmp=mp=73+(int)(Math.random()*lvl*19);
 	bstr=str= 7+(int)(Math.random()*lvl*11);
 	bwis=wis=10+(int)(Math.random()*lvl*11);
-	bluck=luk=10+(int)(Math.random()*lvl*11);
+	bluk=luk=10+(int)(Math.random()*lvl*11);
 	bspd=spd=11+(int)(Math.random()*lvl*11);
 	bdef=def=9+(int)(Math.random()*lvl*11);
 	lvl=10+((int) (Math.random()*5));
@@ -261,7 +261,7 @@ class Lion extends Monster{
 	bmp=mp=78+(int)(Math.random()*lvl*20);
 	bstr=str=10+(int)(Math.random()*lvl*11);
 	bwis=wis=8+(int)(Math.random()*lvl*11);
-	bluck=luk=11+(int)(Math.random()*lvl*11);
+	bluk=luk=11+(int)(Math.random()*lvl*11);
 	bspd=spd=10+(int)(Math.random()*lvl*11);
 	bdef=def=10+(int)(Math.random()*lvl*11);
 	lvl=11+((int) (Math.random()*5));
@@ -286,7 +286,7 @@ class Hiker extends Monster{
 	bmp=mp=105+(int)(Math.random()*lvl*21);
 	bstr=str=16+(int)(Math.random()*lvl*12);
 	bwis=wis=14+(int)(Math.random()*lvl*12);
-	bluck=luk=15+(int)(Math.random()*lvl*12);
+	bluk=luk=15+(int)(Math.random()*lvl*12);
 	bspd=spd=16+(int)(Math.random()*lvl*12);
 	bdef=def=15+(int)(Math.random()*lvl*12);
 	lvl=12+((int) (Math.random()*6));
@@ -311,7 +311,7 @@ class Cake extends Monster{//or pie?
 	bmp=mp=93+(int)(Math.random()*lvl*22);
 	bstr=str=12+(int)(Math.random()*lvl*13);
 	bwis=wis=9+(int)(Math.random()*lvl*13);
-	bluck=luk=13+(int)(Math.random()*lvl*13);
+	bluk=luk=13+(int)(Math.random()*lvl*13);
 	bspd=spd=3+(int)(Math.random()*lvl*1.3);
 	bdef=def=13+(int)(Math.random()*lvl*13);
 	lvl=13+((int) (Math.random()*5));
@@ -336,7 +336,7 @@ class Icecream extends Monster{
 	bmp=mp=105+(int)(Math.random()*lvl*23);
 	bstr=str= 11+(int)(Math.random()*lvl*13);
 	bwis=wis=10+(int)(Math.random()*lvl*13);
-	bluck=luk=13+(int)(Math.random()*lvl*13);
+	bluk=luk=13+(int)(Math.random()*lvl*13);
 	bspd=spd=3+(int)(Math.random()*lvl*1.3);
 	bdef=def=10+(int)(Math.random()*lvl*13);
 	lvl=14+((int) (Math.random()*5));
@@ -361,7 +361,7 @@ class Fat extends Monster{//uh :D
 	bmp=mp=129+(int)(Math.random()*lvl*24);
 	bstr=str= 19+(int)(Math.random()*lvl*14);
 	bwis=wis=16+(int)(Math.random()*lvl*14);
-	bluck=luk=14+(int)(Math.random()*lvl*14);
+	bluk=luk=14+(int)(Math.random()*lvl*14);
 	bspd=spd=6+(int)(Math.random()*lvl*1.4);
 	bdef=def=14+(int)(Math.random()*lvl*14);
 	lvl=15+((int) (Math.random()*6));

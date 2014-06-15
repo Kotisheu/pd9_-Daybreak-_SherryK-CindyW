@@ -25,7 +25,7 @@ public class Main extends People{
 	statuses= null;
 	attks=null;
 	wep= new Stick();
-	arm= new Leather();
+	//	arm= new Leather();
 	mun=500;
 
 	isDead=false;

@@ -58,6 +58,10 @@ public class User{
 	return _avail;
     }
 
+    public void addMun( int m ) {
+	munny += m;
+    }
+
     // public void setLoc( Area l ) {
     // 	you.setPlace( l );
     // }

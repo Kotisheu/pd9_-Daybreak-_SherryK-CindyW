@@ -94,7 +94,7 @@ public class Battle {
 		    team.get(i).defend();
 		}
 		if ( response == 3 ) {
-		    
+		}
 		else {}
 	    }
 	}
@@ -103,7 +103,7 @@ public class Battle {
     
     //Available attacks for person
     public void listAtks( People p ) {
-	
+    }	
 
     //Add attack to atkHeap
     public void addAtk( Attacks a ) {
@@ -189,7 +189,7 @@ public class Battle {
 	int div = 0;
 	ArrayList<People> team = _user.getTeam();
 	for ( People p : team ) {
-	    if ( !p.getDead ) 
+	    if ( !p.getDead() ) 
 		div += 1;
 	}
 	return gain/div;
@@ -207,7 +207,7 @@ public class Battle {
     public void winnings() {
 	ArrayList<People> team = _user.getTeam();
 	for ( People p : team ) {
-	    if ( !p.getDead ) 
+	    if ( !p.getDead() ) 
 		p.gainExp( expGain() );
 	}
 	_user.addMun( munGain() );

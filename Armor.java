@@ -23,6 +23,7 @@ class Clothes extends Armor{
 	return "You have worn the clothes.";
     }
     public String purchase(int number){//also sell
+	return "";
     }
 	
 
@@ -42,6 +43,7 @@ class Leather extends Armor{
 	return "You have worn the leather armor.";
     }
     public String purchase(int number){//also sell
+	return "";
     } 
 
 }
