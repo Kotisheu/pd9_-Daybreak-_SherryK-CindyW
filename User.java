@@ -3,25 +3,26 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 
-public class User extends JFrame {
+public class User{
     
+    private ArrayList<People> _all; //all team members.
     private ArrayList<People> _avail; //available team members
     private ArrayList<People> _team; //the user's team in battle (up to 4);
     private Area _loc;
     private People you = new Main();
+    private int munny;
     
     public User() {
 	_avail = new ArrayList<People>();
 	_team = new ArrayList<People>();
-	you = new Main("Soren");
-	_avail.add(you);
-	_team.add(you);
-    }
+	_all = new ArrayList<People>();
+	munny = 500; 
+   }
     public User(String name){
 	this();
 	you= new Main(name);
-	_avail.add(you);
 	_team.add(you);
+	_all.add(you);
 	//	System.out.println( you.getPlace() );
 	_loc = you.getPlace();
     }
@@ -79,15 +80,34 @@ public class User extends JFrame {
 				 "\t5: Equip\n\t6: Status\n" +
 				 "\t7: Next Area\n\t8: Previous Area\n" );
 	       int response = read( 1, 8 );
+	       //==========================================
 	       if ( response == 1 ) {
 	       }
+	       else if ( response == 5 ) {
+		   eqPrompt();
+	       }
+	       else if ( response == 7 ) {
+		   moveFd();
+	       }
+	       else if ( response == 8 ) {
+		   moveBk();
+	       }
+	       //=========================================
 	   }
 	   else { 	       	      
 	       System.out.print( "\t1: Take a step forward.\n" + 
 				 "\t2: Take a step backward.\n" +
 				 "\t3: Items\n\t4: Equip\n" +
 				 "\t5: Status\n" );
-	       read( 1, 5 );
+	       int response = read( 1, 5 );
+	       //==========================================
+	       if ( response == 1 ) {
+		   moveFd();
+	       }
+	       else if ( response == 2 ) {
+		   moveBk();
+	       }
+	       //==========================================
 	   }
 	}
     }
@@ -120,11 +140,11 @@ public class User extends JFrame {
 
     public void eqPrompt() {
 	System.out.println( "Manage equipment of who?\n" );
-	for ( int i = 0; i < _avail.size(); i++ ) {
-	    System.out.println( "\t" + (i+1) + ": " + _avail.get(i).getName() );
+	for ( int i = 0; i < _all.size(); i++ ) {
+	    System.out.println( "\t" + (i+1) + ": " + _all.get(i).getName() );
 	}
 
-	read( 1, _avail.size()-1 );
+	read( 1, _all.size() );
 
 	//Equips;
     }
