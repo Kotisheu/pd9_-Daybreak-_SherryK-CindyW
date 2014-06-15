@@ -2,13 +2,9 @@ import java.util.*;
 
 public class Main extends People{
     public Main(){
-<<<<<<< HEAD
-	super();
 
-=======
     	super();
-    	
->>>>>>> 115d39f2368da1730ba56cce0fcc9678e3b1b665
+ 
 	person="You";
     
 	name="bob";
