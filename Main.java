@@ -13,7 +13,7 @@ public class Main extends People{
 	bdef=def=8+(int)(Math.random()*lvl*5);
 	lvl=1;
 	exp=0;
-	bexp= 100;
+	bexp= 50*lvl;
 	bheight=height=175;//cm
 	bweight=weight=59;//kg
 	inventory= null;
