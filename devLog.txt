@@ -6,12 +6,14 @@
       `                                  \___/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 !!<Add to top please>!!
+
 6/15: Added nxt to Base(exptonextlvl). User input. <Cindy>
 
+6/14: Added first tier armor/weapons/monsters/main.(v Slime has been killed; there's an updated one hiding in Monster.) <Sherry>
 6/14: Slime added to test Battle. Edited ALHeap for Battle(now AtkHeap). Much more can be done with Battle now :) <Cindy>
 
-\\Sherry add whatever you did to 6/12//
 6/12: ALHeap file added. User updated. <Cindy> 
+	Area fixed. <Sherry>
 
 6/9-6/12: Manymanymany finals : >>>>> 5-7 finals + project :c
 
