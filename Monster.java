@@ -15,7 +15,7 @@ class Slime extends Monster{
 	bdef=def=2+(int)(Math.random()*lvl*5);
 	lvl=1+((int) (Math.random()*5));
 	bheight=height=18;//cm
-	beweight=weight=2;//kg
+	bweight=weight=2;//kg
 	isDead=false;
 	exp=5+lvl;
 	wep= null;
@@ -40,7 +40,7 @@ class Kids extends Monster{
 	bdef=def=2+(int)(Math.random()*lvl*6);
 	lvl=2+((int) (Math.random()*6));
 	bheight=height=114;//cm
-	beweight=weight=25;//kg
+	bweight=weight=25;//kg
 	isDead=false;
 	exp=5+lvl;
 	wep= new Stick();
@@ -65,7 +65,7 @@ class Goblin extends Monster{
 	bdef=def=2+(int)(Math.random()*lvl*5);
 	lvl=1+((int) (Math.random()*5));
 	bheight=height=18;//cm
-	beweight=weight=2;//kg
+	bweight=weight=2;//kg
 	isDead=false;
 	exp=5+lvl;
 	wep= null;
@@ -77,10 +77,10 @@ class Goblin extends Monster{
 
     }
 }
-class Kids extends Monster{
-    public Kids(){
-	name= "Kid";
-	person="Child";
+class Camper extends Monster{
+    public Camper(){
+	name= "Campi";
+	person="Camper";
 	bhp=hp=23+(int)(Math.random()*lvl*11);
 	bmp=mp=16+(int)(Math.random()*lvl*11);
 	bstr=str= 1+(int)(Math.random()*lvl*6);
@@ -90,7 +90,7 @@ class Kids extends Monster{
 	bdef=def=2+(int)(Math.random()*lvl*6);
 	lvl=2+((int) (Math.random()*6));
 	bheight=height=18;//cm
-	beweight=weight=2;//kg
+	bweight=weight=2;//kg
 	isDead=false;
 	exp=5+lvl;
 	wep= new Stick();
