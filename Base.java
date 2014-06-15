@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Base{
  
-    protected int hp,mp,lvl,exp,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
+    protected int hp,mp,lvl,exp,nxt,str,wis,luk,spd,def, mun, height,weight;//curent amount(12)
     protected int bhp,bmp,bexp,bstr,bwis,bluck,bspd,bdef,bheight,bweight;//max amount/base amount depending : > (10)
     protected boolean isDead;
     protected String name;
@@ -38,6 +38,13 @@ public abstract class Base{
     }
     public void setExp(int n){
 	exp= n;
+    }
+
+    public int getNxt(){ //Amount to next lvl
+	return nxt;
+    }
+    public void setNxt(int n){
+	nxt= n;
     }
     
     public int getStr(){
