@@ -1,9 +1,8 @@
 import java.io.*;
 
-
 public class Game {
     
-    private User player;
+    protected User player;
 
     public Game() {    
 	if ( prompt() ) {
@@ -16,7 +15,7 @@ public class Game {
 	    System.out.println( "stuff" ); 
 	}
     }
-    
+
     //Whoosh! prompt the player if they would like to start a new game.
     public boolean prompt() {
 	System.out.print("Would you like to start a new game? <y/n>\n");
@@ -59,7 +58,7 @@ public class Game {
 		player = new User(tmp);
 	    else  {
 		System.out.println( "<Default name>" );
-		player = new User();
+		player = new User(name);
 		//Guy player = new player( name );
 	    }
 	} 

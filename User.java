@@ -31,7 +31,7 @@ public class User{
 	you.setPlace(you.getPlace().moveFoward());
     }
     public void moveBk() {
-	//	you.setPlace(you.getPlace().moveBackward());
+	you.setPlace(you.getPlace().moveBackward());
     }
 
     public ArrayList<People> addTeam( int i ) {

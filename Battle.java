@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -14,10 +13,10 @@ public class Battle {
 	_user = u;
 	end = false;
 	//TESTING PURPOSES
-	MONSTERS = new ArrayList<Monster>();
-	MONSTERS.add( new Slime() );
+	// MONSTERS = new ArrayList<Monster>();
+	// MONSTERS.add( new Slime() );
 	//
-	    //u.getLoc().getMon(); //get monster list from area
+	//	_user.getLoc().getMon(); //get monster list from area
 	init( MONSTERS ); 
 	acts = new AtkHeap();
 	go();
@@ -39,7 +38,7 @@ public class Battle {
 	    } catch(InterruptedException ex) {
 		Thread.currentThread().interrupt();
 	    }
-	    prompt(); //Ask player for their next move
+	    bPrompt(); //Ask player for their next move
 	    try {
 		Thread.sleep(500);
 	    } catch(InterruptedException ex) {
@@ -59,7 +58,7 @@ public class Battle {
 	}
     }
 
-    public void prompt() {
+    public void bPrompt() {
 	ArrayList<People> team = _user.getTeam();
 	System.out.println ( "\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n" );
 	for ( int i = 0; team.size() > i; i++ ) {

@@ -15,13 +15,13 @@ public class Main extends People{
     protected Area towere;
 
     public Main(){
-
+	
     	super();
- 
+
 	person="You";
     
 	name="bob";
-	
+
 	pellet = new Village();
 	stonehenge = new Grassland();
 	kaetown = new Townuno();
@@ -70,11 +70,11 @@ public class Main extends People{
 	isDead=false;
     }
 
-    public Main(String n){
-        this();
-	name=n;
-
+    public Main ( String n ) {
+	this();
+	name = n;
     }
+    
     //Heals and updates character stats
     public void lvlUp() {
 	//Clear statuses
