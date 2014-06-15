@@ -1,14 +1,53 @@
 import java.util.*;
 
 public class Main extends People{
-    public Main(){
 
+    protected Area pellet;
+    protected Area stonehenge;
+    protected Area kaetown;
+    protected Area feywood;
+    protected Area seaporte;
+    protected Area aguael; 
+    protected Area tree;
+    protected Area sans; 
+    protected Area metro;
+    protected Area dessert;
+    protected Area towere;
+
+    public Main(){
+	
     	super();
- 
+
 	person="You";
     
 	name="bob";
-	setPlace( new Village() );
+
+	pellet = new Village();
+	stonehenge = new Grassland();
+	kaetown = new Townuno();
+	feywood = new Forest();
+	seaporte= new Towndos();
+	aguael= new Water(); 
+	tree= new Towntres();
+	sans= new Mountain(); 
+	metro= new Towncuatro();
+	dessert = new Desert();
+	towere= new Tower();
+
+	pellet.setFrontBack( stonehenge, null );
+	stonehenge.setFrontBack( kaetown, pellet );
+	kaetown.setFrontBack( feywood, stonehenge );
+	feywood.setFrontBack( seaporte, kaetown );
+	seaporte.setFrontBack( aguael, feywood );
+	aguael.setFrontBack( tree, seaporte );
+	tree.setFrontBack( sans, aguael );
+	sans.setFrontBack( metro, tree );
+	metro.setFrontBack( dessert, sans );
+	dessert.setFrontBack( towere, metro );
+	towere.setFrontBack( null, dessert );
+
+	setPlace( pellet );
+
 	bhp=hp=50+(int)(Math.random()*lvl*10);
 	bmp=mp=20+(int)(Math.random()*lvl*10);
 	bstr=str=7+(int)(Math.random()*lvl*5);
@@ -31,11 +70,11 @@ public class Main extends People{
 	isDead=false;
     }
 
-    public Main(String n){
-        this();
-	name=n;
-
+    public Main ( String n ) {
+	this();
+	name = n;
     }
+    
     //Heals and updates character stats
     public void lvlUp() {
 	//Clear statuses

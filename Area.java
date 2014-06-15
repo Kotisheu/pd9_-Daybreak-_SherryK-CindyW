@@ -12,7 +12,7 @@ public abstract class Area{
     protected int stepsbackwards;//steps to town behind
     protected Area nextplace;
     protected Area backplace;
- 
+
     protected static Area pellet = new Village();
     protected static Area stonehenge = new Grassland();
     protected static Area kaetown = new Townuno();
@@ -25,7 +25,6 @@ public abstract class Area{
     protected static Area dessert = new Desert();
     protected static Area towere= new Tower();
 
-
     public ArrayList<Monster> getMon() {
 	return munstars;
     }
@@ -33,14 +32,36 @@ public abstract class Area{
 	if (town){
 	    return nextplace;
 	}
+	else if ( step > 10 ) {
+	    step = 0;
+	    return nextplace;
+	}
 	else{ 
 	    step+=1;
 	    return Check();
 	}
-
-	//	return this;
     }
 
+    public Area moveBackward(){
+	if (town){
+	    return backplace;
+	}
+	else if ( step > 10 ) {
+	    step = 0;
+	    return backplace;
+	}
+	else{ 
+	    step+=1;
+	    return Check();
+	}
+    }
+    
+    
+    public void setFrontBack( Area f, Area b ) {
+	nextplace = f;
+	backplace = b;
+    }
+    
     public abstract Area Check();
 }
 
@@ -76,6 +97,7 @@ class Grassland extends Area{
 	stepstowards = 10;
 	stepsbackwards = 0;
 	nextplace=kaetown;
+	System.out.println( nextplace );
 	backplace=pellet;
     }
     public Area Check(){
@@ -117,8 +139,8 @@ class Forest extends Area{
 	step = 1;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	nextplace=kaetown;
-	backplace=pellet;
+	nextplace=seaporte;
+	backplace=kaetown;
 
     }
     public Area Check(){
