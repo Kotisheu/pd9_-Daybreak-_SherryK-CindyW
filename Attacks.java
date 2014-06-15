@@ -3,6 +3,7 @@
 public abstract class Attacks {
     
     protected String _name;
+    protected String _description;
     protected int _pri; //how long it takes to use attack
     protected int tmpPri;
     protected double _multiplier; //damage multiplier
@@ -19,8 +20,11 @@ public abstract class Attacks {
 	String det = atkr.getName() + " dealt ";
 	int dam = 
 	    (int) ( atkr.getStr()*_multiplier ) - 
-	    ( (int) (tar.getDef()*.5) + (int)(Math.random()*4) );
+	    ( (int) (tar.getDef()*.5) + (int)(Math.random()*2) );
 	
+	if ( dam < 0 ) 
+	    dam = 0;	 
+
 	atkr.setMp ( atkr.getMp() - _mag ); //lose mp
 
 	tar.setHp ( tar.getHp() - dam ); //lose hp
@@ -37,8 +41,11 @@ public abstract class Attacks {
 
 	int dam = 
 	    (int) ( atkr.getWis()*_multiplier ) - 
-	    ( (int)(tar.getDef()*.5) + (int)(Math.random()*4) );
+	    ( (int)(tar.getRes()*.5) + (int)(Math.random()*2) );
 	
+	if ( dam > 0 ) 
+	    dam = 0;	
+
 	atkr.setMp ( tar.getMp() - _mag ); //use mp
 
 	tar.setHp ( tar.getHp() - dam ); //lose hp
@@ -71,49 +78,64 @@ public abstract class Attacks {
 	return _tar;
     }
 
+    public String getName() {
+	return _name;
+    }
+
+    public String getDesc() {
+	return _description;
+    }
+
     public abstract void declare();
 
 }
 
 class A1 extends Attacks {
-    
-    public A1 ( Base tar, Base atkr ) {
-	
+
+    public A1() {
 	_name = "Smash";
+	_description = "Weak attack.";
 	_pri = tmpPri = 1;
 	_multiplier = 1;
 	_mag = 0;
+    }
+    
+    public A1 ( Base tar, Base atkr ) {	
+	this();
 	_tar = tar;
 	_atkr = atkr;
-
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    norm( _tar, _atkr ); //declare a normal attack
+	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
 
     }
 
 }
 
 class A2 extends Attacks {
-    
-    public A2 ( Base tar, Base atkr ) {
-	
+
+    public A2() {
 	_name = "Holy Smash";
+	_description = "Does slightly more damage than smash. Uses 2MP.";
 	_pri = tmpPri = 2;
 	_multiplier = 1.5;
 	_mag = 2;
+    }
+    
+    public A2 ( Base tar, Base atkr ) {
+	this();
 	_tar = tar;
 	_atkr = atkr;
-
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    norm( _tar, _atkr ); //declare a normal attack
+
+	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
 
     }
 
@@ -121,65 +143,73 @@ class A2 extends Attacks {
 
 class A3 extends Attacks {
     
-    public A3 ( Base tar, Base atkr ) {
-	
+    public A3() {    
 	_name = "Omni Smash";
-	_pri = tmpPri = 3;
-	_multiplier = 2;
+	_description = "Triple attack power of smash. Uses 5MP. Wait time is 1 turn.";
+	_pri = tmpPri = 2;
+	_multiplier = 3;
 	_mag = 5;
+    }
+
+    public A3 ( Base tar, Base atkr ) {	
+	this();
 	_tar = tar;
 	_atkr = atkr;
-
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    norm( _tar, _atkr ); //declare a normal attack
+	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
 
     }
 
 }
 
 class M1 extends Attacks {
-    
-    public M1 ( Base tar, Base atkr ) {
-	
+
+    public M1() {
 	_name = "Cast";
+	_description = "Basic magic attack. Uses 3MP.";
 	_pri = tmpPri = 1;
 	_multiplier = 1;
 	_mag = 3;
-	_tar = tar;
-	_atkr = atkr;
-
     }
 
+    public M1 ( Base tar, Base atkr ) {       
+	this();
+	_tar = tar;
+	_atkr = atkr;
+    }
+    
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    mag( _tar, _atkr ); //declare a normal attack
-
+	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
+	
     }
 
 }
 
 class M2 extends Attacks {
     
-    public M2 ( Base tar, Base atkr ) {
-	
+    public M2() {
 	_name = "Blast";
-	_pri = tmpPri = 2;
+	_description = "Slightly more powerful than cast. Uses 5MP.";
+	_pri = tmpPri = 1;
 	_multiplier = 1.5;
 	_mag = 5;
+    }
+    public M2 ( Base tar, Base atkr ) {
+	this();
 	_tar = tar;
 	_atkr = atkr;
-
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    mag( _tar, _atkr ); //declare a normal attack
+	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
 
     }
 
@@ -187,21 +217,24 @@ class M2 extends Attacks {
 
 class M3 extends Attacks {
     
-    public M3 ( Base tar, Base atkr ) {
-	
+    public M3() {
 	_name = "Divine Strike";
+	_description = "Does A LOT more damage than cast and blast. Uses 20MP. Wait time is 2 turns.";
 	_pri = tmpPri = 3;
-	_multiplier = 3;
-	_mag = 10;
+	_multiplier = 5;
+	_mag = 20;
+    }	
+
+    public M3 ( Base tar, Base atkr ) {
+	this();
 	_tar = tar;
 	_atkr = atkr;
-
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
-	    mag( _tar, _atkr ); //declare a normal attack
+	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
 
     }
 
