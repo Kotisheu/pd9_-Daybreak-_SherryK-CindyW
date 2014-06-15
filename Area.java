@@ -13,17 +13,17 @@ public abstract class Area{
     protected Area nextplace;
     protected Area backplace;
  
-    protected static Area pellet = new Village();
-    protected static Area stonehenge = new Grassland();
-    protected static Area kaetown = new Townuno();
-    protected static Area feywood = new Forest();
-    protected static Area seaporte= new Towndos();
-    protected static Area aguael= new Water(); 
-    protected static Area tree= new Towntres();
-    protected static Area sans= new Mountain(); 
-    protected static Area metro= new Towncuatro();
-    protected static Area dessert = new Desert();
-    protected static Area towere= new Tower();
+    protected Area pellet = new Village();
+    protected Area stonehenge = new Grassland();
+    protected Area kaetown = new Townuno();
+    protected Area feywood = new Forest();
+    protected Area seaporte= new Towndos();
+    protected Area aguael= new Water(); 
+    protected Area tree= new Towntres();
+    protected Area sans= new Mountain(); 
+    protected Area metro= new Towncuatro();
+    protected Area dessert = new Desert();
+    protected Area towere= new Tower();
 
 
     public ArrayList<Monster> getMon() {
@@ -33,6 +33,10 @@ public abstract class Area{
 	if (town){
 	    return nextplace;
 	}
+	else if ( step > 10 ) {
+	    step = 0;
+	    return nextplace;
+	}
 	else{ 
 	    step+=1;
 	    return Check();
@@ -40,7 +44,12 @@ public abstract class Area{
 
 	//	return this;
     }
-
+    
+    public void setFrontBack( Area f, Area b ) {
+	nextplace = f;
+	backplace = b;
+    }
+    
     public abstract Area Check();
 }
 
@@ -76,6 +85,7 @@ class Grassland extends Area{
 	stepstowards = 10;
 	stepsbackwards = 0;
 	nextplace=kaetown;
+	System.out.println( nextplace );
 	backplace=pellet;
     }
     public Area Check(){
@@ -117,8 +127,8 @@ class Forest extends Area{
 	step = 1;
 	stepstowards = 10;
 	stepsbackwards = 0;
-	nextplace=kaetown;
-	backplace=pellet;
+	nextplace=seaporte;
+	backplace=kaetown;
 
     }
     public Area Check(){
