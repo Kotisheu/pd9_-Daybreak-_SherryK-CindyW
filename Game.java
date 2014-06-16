@@ -57,7 +57,7 @@ public class Game {
 	    if ( !tmp.equals( "" ) )
 		player = new User(tmp);
 	    else  {
-		System.out.println( "<Default name>" );
+		System.out.println( "Soren" );
 		player = new User(name);
 		//Guy player = new player( name );
 	    }

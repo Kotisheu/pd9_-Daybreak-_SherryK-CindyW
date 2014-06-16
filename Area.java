@@ -30,10 +30,14 @@ public abstract class Area{
     }
     public Area moveFoward(){
 	if (town){
-	    return nextplace;
+	    if ( nextplace != null )
+		return nextplace;
+	    else {
+		System.out.println( "You can't go that way!" );
+		return this;
+	    }
 	}
-	else if ( step > 10 ) {
-	    step = 0;
+	else if ( step >= 10 ) {
 	    return nextplace;
 	}
 	else{ 
@@ -44,14 +48,18 @@ public abstract class Area{
 
     public Area moveBackward(){
 	if (town){
-	    return backplace;
+	    if ( backplace != null )
+		return backplace;
+	    else {
+		System.out.println( "A mysterious invisible wall blocks your path." );
+		return this;
+	    }
 	}
-	else if ( step > 10 ) {
-	    step = 0;
+	else if ( step <= 1 ) {
 	    return backplace;
 	}
 	else{ 
-	    step+=1;
+	    step-=1;
 	    return Check();
 	}
     }
@@ -91,6 +99,9 @@ class Grassland extends Area{
 	town= false;
 	name= "Stonehenge";
 	munstars = new ArrayList<Monster>();
+	munstars.add( new Slime() );
+	munstars.add( new Kids() );
+	munstars.add( new Snail() );	
 	store = null;//noneedforstore
 	citizens = null; // nopeople
 	step = 1;

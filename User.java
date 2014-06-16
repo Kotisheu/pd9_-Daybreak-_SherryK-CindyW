@@ -32,9 +32,19 @@ public class User{
 
     public void moveFd() {
 	you.setPlace(you.getPlace().moveFoward());
+	_loc = you.getPlace();
+	int chance = (int)(Math.random()*2);
+	if ( _loc != null && chance == 1 ) {
+	    new Battle(this);
+	}
     }
     public void moveBk() {
 	you.setPlace(you.getPlace().moveBackward());
+	_loc = you.getPlace();
+	int chance = (int)(Math.random()*2);
+	if ( _loc != null && chance == 1 ) {
+	    new Battle(this);
+	}
     }
 
     public ArrayList<People> addTeam( int i ) {
@@ -61,6 +71,10 @@ public class User{
 	return _avail;
     }
 
+    public void addMun( int m ) {
+	munny += m;
+    }
+
     // public void setLoc( Area l ) {
     // 	you.setPlace( l );
     // }
@@ -78,11 +92,11 @@ public class User{
 		 || getLoc() instanceof Towndos 
 		 || getLoc() instanceof Towntres 
 		 || getLoc() instanceof Towncuatro ) {
-		System.out.print( "\t1: Talk\n\t2:Stay at an Inn\n" +
+		System.out.print( "\t1: Talk\n\t2: Stay at an Inn\n" +
 				  "\t3: Shop\n\t4: Items\n" + 
 				  "\t5: Status\n" +
 				  "\t6: Next Area\n\t7: Previous Area\n" );
-		int response = read( 1, 7 );
+		int response = read( 1, 8 );
 		//==========================================
 		if ( response == 1 ) {
 		    String ss;
