@@ -98,7 +98,7 @@ public class User{
 				  "\t3: Shop\n\t4: Items\n" + 
 				  "\t5: Status\n" +
 				  "\t6: Next Area\n\t7: Previous Area\n" );
-		int response = read( 1, 7 );
+		int response = read( 1, 8 );
 		//==========================================
 		if ( response == 1 ) {
 		    String ss;
@@ -187,7 +187,7 @@ public class User{
     public int read( int lo, int hi ) {
 	BufferedReader input = 
 	    new BufferedReader( new InputStreamReader(System.in) );
-	int response = -1;
+	int response = 0;
 	   
 	while ( response < lo || response > hi ) {
 	       
@@ -214,12 +214,8 @@ public class User{
 	for ( int i = 0; i < _all.size(); i++ ) {
 	    System.out.println( "\t" + (i+1) + ": " + _all.get(i).getName() );
 	}
-	System.out.println( "\t0: Exit\n" );
-	int rep=read( 0, _all.size() );
-	
-	//if Exit is chosen
-	if ( rep == 0 )
-	    return;
+
+	int rep=read( 1, _all.size() );
 
 	ArrayList<Item> i =_all.get(rep-1).getInv();
 	int num=0;
@@ -227,7 +223,6 @@ public class User{
 	    num++;
 	    System.out.println( "\t" + num +a.getName()+a.getAmount());
 	}//use??
-
     }
     public void ckStat(){
 	

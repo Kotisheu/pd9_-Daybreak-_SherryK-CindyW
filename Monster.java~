@@ -8,7 +8,7 @@ class Slime extends Monster{
 	person="Slime";
 	bhp=hp=19+(int)(Math.random()*lvl*10);
 	bmp=mp=17+(int)(Math.random()*lvl*10);
-	bstr=str= 5+(int)(Math.random()*lvl*5);
+	bstr=str= 3+(int)(Math.random()*lvl*5);
 	bwis=wis=4+(int)(Math.random()*lvl*5);
 	bluk=luk=4+(int)(Math.random()*lvl*5);
 	bspd=spd=3+(int)(Math.random()*lvl*5);
@@ -33,7 +33,7 @@ class Snail extends Monster{
 	person="Snai;";
 	bhp=hp=22+(int)(Math.random()*lvl*11);
 	bmp=mp=14+(int)(Math.random()*lvl*11);
-	bstr=str= 5+(int)(Math.random()*lvl*5);
+	bstr=str= 3+(int)(Math.random()*lvl*5);
 	bwis=wis=2+(int)(Math.random()*lvl*5);
 	bluk=luk=5+(int)(Math.random()*lvl*5);
 	bspd=spd=2+(int)(Math.random()*lvl*5);
@@ -58,11 +58,11 @@ class Kids extends Monster{
 	person="Child";
 	bhp=hp=39+(int)(Math.random()*lvl*12);
 	bmp=mp=25+(int)(Math.random()*lvl*12);
-	bstr=str= 7+(int)(Math.random()*lvl*6);
+	bstr=str= 11+(int)(Math.random()*lvl*6);
 	bwis=wis=6+(int)(Math.random()*lvl*6);
 	bluk=luk=11+(int)(Math.random()*lvl*6);
 	bspd=spd=8+(int)(Math.random()*lvl*6);
-	bdef=def=7+(int)(Math.random()*lvl*6);
+	bdef=def=11+(int)(Math.random()*lvl*6);
 	lvl=3+((int) (Math.random()*6));
 	bheight=height=114;//cm
 	bweight=weight=25;//kg

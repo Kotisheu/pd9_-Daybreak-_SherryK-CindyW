@@ -37,7 +37,7 @@ public abstract class Area{
 	    if ( nextplace != null )
 		return nextplace;
 	    else {
-		System.out.println( "The phantom of an old man appears and mutters something. It's hard to hear, but you can make out the words 'you shall not pass'" );
+		System.out.println( "You can't go that way!" );
 		return this;
 	    }
 	}

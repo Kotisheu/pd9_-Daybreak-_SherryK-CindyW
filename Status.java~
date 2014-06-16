@@ -11,9 +11,9 @@ public abstract class Status{
 	ArrayList<Status> stat=a.getStatuses();
 	stat.add(s);
 
-	// a.getStatuses().add(s);
-	// ArrayList<Status> stat=a.getStatuses();
-	// a.setStatuses(stat);
+	a.getStatuses().add(s);
+	ArrayList<Status> stat=a.getStatuses();
+	a.setStatuses(stat);
     }
     public abstract String effect();// how cause effect
   public String getName(){
