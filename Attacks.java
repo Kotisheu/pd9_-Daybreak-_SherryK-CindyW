@@ -104,13 +104,14 @@ class A1 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
-
+	_atkr.canAtk(true);
     }
 
 }
@@ -129,6 +130,8 @@ class A2 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
+	
     }
 
     public void declare() {
@@ -136,7 +139,7 @@ class A2 extends Attacks {
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 
 	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
-
+	_atkr.canAtk(true);
     }
 
 }
@@ -155,13 +158,14 @@ class A3 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 	    System.out.println( norm( _tar, _atkr ) ); //declare a normal attack
-
+	_atkr.canAtk(true);
     }
 
 }
@@ -180,13 +184,14 @@ class M1 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
     }
     
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
-	
+	_atkr.canAtk(true);
     }
 
 }
@@ -204,13 +209,14 @@ class M2 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
-
+	_atkr.canAtk(true);
     }
 
 }
@@ -229,13 +235,14 @@ class M3 extends Attacks {
 	this();
 	_tar = tar;
 	_atkr = atkr;
+	_atkr.canAtk(false);
     }
 
     public void declare() {
 	
 	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
 	    System.out.println( mag( _tar, _atkr ) ); //declare a magic attack
-
+	_atkr.canAtk(true);
     }
 
 }

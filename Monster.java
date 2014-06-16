@@ -1,18 +1,24 @@
 public abstract class Monster extends Base{
     protected String disc;
+    protected int munny;
+    public int getMun() {
+	return munny;
+    }
 }
 //grassland
 class Slime extends Monster{
     public Slime(){
 	name= "Slim";
 	person="Slime";
+	exp = 5;
+	munny = 10;
 	bhp=hp=19+(int)(Math.random()*lvl*10);
 	bmp=mp=17+(int)(Math.random()*lvl*10);
 	bstr=str= 5+(int)(Math.random()*lvl*5);
 	bwis=wis=4+(int)(Math.random()*lvl*5);
 	bluk=luk=4+(int)(Math.random()*lvl*5);
 	bspd=spd=3+(int)(Math.random()*lvl*5);
-	bdef=def=5+(int)(Math.random()*lvl*5);
+	bdef=def=3+(int)(Math.random()*lvl*5);
 	lvl=1+((int) (Math.random()*5));
 	bheight=height=18;//cm
 	bweight=weight=2;//kg
@@ -31,13 +37,15 @@ class Snail extends Monster{
     public Snail(){
 	name= "Naie";
 	person="Snai;";
+	exp = 5;
+	munny = 15;
 	bhp=hp=22+(int)(Math.random()*lvl*11);
 	bmp=mp=14+(int)(Math.random()*lvl*11);
 	bstr=str= 5+(int)(Math.random()*lvl*5);
 	bwis=wis=2+(int)(Math.random()*lvl*5);
 	bluk=luk=5+(int)(Math.random()*lvl*5);
 	bspd=spd=2+(int)(Math.random()*lvl*5);
-	bdef=def=6+(int)(Math.random()*lvl*5);
+	bdef=def=4+(int)(Math.random()*lvl*5);
 	lvl=2+((int) (Math.random()*5));
 	bheight=height=5;//cm
 	bweight=weight=1;//kg
@@ -56,13 +64,15 @@ class Kids extends Monster{
     public Kids(){
 	name= "Kid";
 	person="Child";
+	exp = 10;
+	munny = 15;
 	bhp=hp=39+(int)(Math.random()*lvl*12);
 	bmp=mp=25+(int)(Math.random()*lvl*12);
 	bstr=str= 7+(int)(Math.random()*lvl*6);
 	bwis=wis=6+(int)(Math.random()*lvl*6);
 	bluk=luk=11+(int)(Math.random()*lvl*6);
 	bspd=spd=8+(int)(Math.random()*lvl*6);
-	bdef=def=7+(int)(Math.random()*lvl*6);
+	bdef=def=5+(int)(Math.random()*lvl*6);
 	lvl=3+((int) (Math.random()*6));
 	bheight=height=114;//cm
 	bweight=weight=25;//kg
@@ -81,6 +91,8 @@ class Goblin extends Monster{
     public Goblin(){
 	name= "Gobs";
 	person="Goblin";
+	exp = 7;
+	munny = 10;
 	bhp=hp=41+(int)(Math.random()*lvl*13);
 	bmp=mp=40+(int)(Math.random()*lvl*13);
 	bstr=str= 7+(int)(Math.random()*lvl*7);
@@ -106,6 +118,8 @@ class Monkey extends Monster{
     public Monkey(){
 	name= "Mankey";
 	person="Monkey";
+	exp = 8;
+	munny = 15;
 	bhp=hp=52+(int)(Math.random()*lvl*14);
 	bmp=mp=49+(int)(Math.random()*lvl*14);
 	bstr=str= 5+(int)(Math.random()*lvl*7);
@@ -131,6 +145,8 @@ class Camper extends Monster{
     public Camper(){
 	name= "Campi";
 	person="Camper";
+	exp = 13;
+	munny = 20;
 	bhp=hp=73+(int)(Math.random()*lvl*15);
 	bmp=mp=57+(int)(Math.random()*lvl*15);
 	bstr=str= 10+(int)(Math.random()*lvl*8);
@@ -157,6 +173,8 @@ class Fish extends Monster{
     public Fish(){
 	name= "Pira";
 	person="Piranah";
+	exp = 7;
+	munny = 14;
 	bhp=hp=65+(int)(Math.random()*lvl*16);
 	bmp=mp=51+(int)(Math.random()*lvl*16);
 	bstr=str=6+(int)(Math.random()*lvl*9);
@@ -182,6 +200,8 @@ class Shark extends Monster{
     public Shark(){
 	name= "Karhs";
 	person="Shark";
+	exp = 20;
+	munny = 20;
 	bhp=hp=66+(int)(Math.random()*lvl*17);
 	bmp=mp=60+(int)(Math.random()*lvl*17);
 	bstr=str= 7+(int)(Math.random()*lvl*9);
@@ -207,6 +227,8 @@ class Pirate extends Monster{
     public Pirate(){
 	name= "Etarr";
 	person="Pirate";
+	exp = 25;
+	munny = 20;
 	bhp=hp=89+(int)(Math.random()*lvl*18);
 	bmp=mp=86+(int)(Math.random()*lvl*18);
 	bstr=str= 10+(int)(Math.random()*lvl*10);
@@ -232,6 +254,8 @@ class Goat extends Monster{
     public Goat(){
 	name= "Tee";
 	person="Goat";
+	exp = 25;
+	munny = 30;
 	bhp=hp=84+(int)(Math.random()*lvl*19);
 	bmp=mp=73+(int)(Math.random()*lvl*19);
 	bstr=str= 7+(int)(Math.random()*lvl*11);
@@ -257,6 +281,8 @@ class Lion extends Monster{
     public Lion(){
 	name= "Niol";
 	person="Lion";
+	exp = 27;
+	munny = 32;
 	bhp=hp=91+(int)(Math.random()*lvl*20);
 	bmp=mp=78+(int)(Math.random()*lvl*20);
 	bstr=str=10+(int)(Math.random()*lvl*11);
@@ -282,6 +308,8 @@ class Hiker extends Monster{
     public Hiker(){
 	name= "Mike";
 	person="Hiker";
+	exp = 30;
+	munny = 30;
 	bhp=hp=108+(int)(Math.random()*lvl*21);
 	bmp=mp=105+(int)(Math.random()*lvl*21);
 	bstr=str=16+(int)(Math.random()*lvl*12);
@@ -307,6 +335,8 @@ class Cake extends Monster{//or pie?
     public Cake(){
 	name= "Slice";
 	person="Cake";
+	exp = 30;
+	munny = 50;
 	bhp=hp=101+(int)(Math.random()*lvl*22);
 	bmp=mp=93+(int)(Math.random()*lvl*22);
 	bstr=str=12+(int)(Math.random()*lvl*13);
@@ -332,6 +362,8 @@ class Icecream extends Monster{
     public Icecream(){
 	name= "Ecimearc";
 	person="Ice Cream";
+	exp = 32;
+	munny = 50;
 	bhp=hp=108+(int)(Math.random()*lvl*23);
 	bmp=mp=105+(int)(Math.random()*lvl*23);
 	bstr=str= 11+(int)(Math.random()*lvl*13);
@@ -357,6 +389,8 @@ class Fat extends Monster{//uh :D
     public Fat(){
 	name= "Phatti";
 	person="Fat";
+	exp = 40;
+	munny = 60;
 	bhp=hp=137+(int)(Math.random()*lvl*24);
 	bmp=mp=129+(int)(Math.random()*lvl*24);
 	bstr=str= 19+(int)(Math.random()*lvl*14);

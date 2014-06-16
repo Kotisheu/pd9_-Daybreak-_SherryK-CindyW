@@ -4,18 +4,31 @@ public abstract class People extends Base{
 	defing = false;
 	canAtk = true;
 	isDead = false;
+	ran = false;
     }
     
     public void defend() {
 	def += 5;
 	defing = true;
+	canAtk = false;
     }
 
-    public void setNormalDef() { //Normal defense after defending 
+    public void setNormal() { //Normal defense after defending 
 	if ( defing ) { 
 	    def -= 5;
 	    defing = false;
+	    canAtk = true;
 	}
+	if ( ran ) {
+	    ran = false;
+	    canAtk = true;
+	}
+    }
+
+    public void compNorm() { //set after battle?
+	canAtk = true;
+	ran = false;
+	defing = false;
     }
 
     public void gainExp( int i ) {
@@ -30,7 +43,7 @@ public abstract class People extends Base{
     public abstract void lvlUp(); //Each person has different boosts when lvl up
 
 }
-class Kangaroo{
+class Kangaroo extends People {
     public Kangaroo(){
 	name= "Joey";
 	person= "Mysterious Kangaroo";
@@ -58,11 +71,11 @@ class Kangaroo{
     public void lvlUp(){
     }
 }
-class Girl{
+class Girl extends People {
     public Girl(){
 	name="Mahou";
 	person=" Drowning girl";
-	hp= bhp*.2;
+	hp= (int)(bhp*.2);
 	bhp=20+(int)(Math.random()*lvl*10);
 	bmp=mp=50+(int)(Math.random()*lvl*100);
 	bstr=str=7+(int)(Math.random()*lvl*5);
@@ -87,7 +100,7 @@ class Girl{
   public void lvlUp(){
     }
 }
-class Tree{
+class Tree extends People {
     public Tree(){
 	name="Drake";
 	person="Tree man";
@@ -115,7 +128,7 @@ bhp=hp=50+(int)(Math.random()*lvl*100);
   public void lvlUp(){
     }
 }
-class Thief{
+class Thief extends People {
     public Thief(){
 	name="Robert";
 	person= "Thief";

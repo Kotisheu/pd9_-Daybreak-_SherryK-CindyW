@@ -6,6 +6,7 @@ public abstract class Base{
     protected int bhp,bmp,bexp,bstr,bwis,bluk,bspd,bdef,bres,bheight,bweight;//max amount/base amount depending : > (10)
     protected boolean canAtk; //can character attakc? (not waiting on a move)
     protected boolean defing; // is character defending
+    protected boolean ran; //did char try to run
     protected boolean isDead;
     protected String name;
     protected String person;
@@ -257,6 +258,19 @@ public abstract class Base{
     }
     public void setArm(Armor n){
 	arm=n;
+    }
+
+    public boolean canAtk() {
+	return canAtk;
+    }
+    public void canAtk( boolean b ) {
+	canAtk = b;
+    }
+    public boolean ran() {
+	return ran;
+    }
+    public void ran( boolean b ) {
+	ran = b;
     }
 	
 }

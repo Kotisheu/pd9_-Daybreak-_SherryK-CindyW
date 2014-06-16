@@ -149,6 +149,9 @@ class Forest extends Area{
 	town= false;
 	name= "Stonehenge";
 	munstars = new ArrayList<Monster>();
+	munstars.add( new Goblin() );
+	munstars.add( new Monkey() );
+	munstars.add( new Camper() );
 	store = null;//noneedforstore
 	citizens = null; // nopeople
 	step = 1;
@@ -193,6 +196,9 @@ class Water extends Area{
 	town= false;
 	name= "Aguael";
 	munstars = new ArrayList<Monster>();
+	munstars.add( new Fish() );
+	munstars.add( new Shark() );
+	munstars.add( new Pirate() );
 	store = null;//noneedforstore
 	citizens = null; // nopeople
 	step = 1;
@@ -231,6 +237,9 @@ class Mountain extends Area{
 	town= false;
 	name= "Sans";
 	munstars = new ArrayList<Monster>();
+	munstars.add( new Goat() );
+	munstars.add( new Lion() );
+	munstars.add( new Hiker() );
 	store = null;//noneedforstore
 	citizens = null; // nopeople
 	step = 1;
@@ -269,6 +278,9 @@ class Desert extends Area{
 	town= false;
 	name= "Dessert Desert";
 	munstars = new ArrayList<Monster>();
+	munstars.add( new Cake() );
+	munstars.add( new Icecream() );
+	munstars.add( new Fat() );
 	store = null;//noneedforstore
 	citizens = null; // nopeople
 	step = 1;
