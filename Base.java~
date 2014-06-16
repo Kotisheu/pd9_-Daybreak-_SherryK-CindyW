@@ -252,7 +252,6 @@ public abstract class Base{
     }
     public void setWep(Weapon n){
 	wep=n;
-	wep.equip( this );
     }
     public Armor getArm(){
 	return arm;
