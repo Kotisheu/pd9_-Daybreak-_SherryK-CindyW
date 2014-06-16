@@ -1,3 +1,4 @@
+import java.util.*;
 public abstract class Status{
     protected boolean buff;
     protected String name;
@@ -5,7 +6,8 @@ public abstract class Status{
 	return buff;
     }
     public void affect(Base a, Status s){
-	ArrayList<Status> stat=a.getStatuses().add(s);
+	ArrayList<Status> stat=a.getStatuses()
+	    stat.add(s);
 	a.setStatuses(stat);
     }
     public abstract String effect();// how cause effect

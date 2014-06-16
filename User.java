@@ -29,7 +29,9 @@ public class User{
 	//	System.out.println( you.getPlace() );
 	_loc = you.getPlace();
     }
-
+    public String getName(){
+	return you.getName();
+    }
     public void moveFd() {
 	you.setPlace(you.getPlace().moveFoward());
     }
