@@ -8,11 +8,8 @@ public abstract class Status{
     }
     public void affect(Base a, Status s){
 
-	ArrayList<Status> stat=a.getStatuses()
-	    stat.add(s);
-
-	a.getStatuses().add(s);
 	ArrayList<Status> stat=a.getStatuses();
+	stat.add(s);
 	a.setStatuses(stat);
     }
     public abstract String effect();// how cause effect
