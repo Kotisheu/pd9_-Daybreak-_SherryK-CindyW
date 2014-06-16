@@ -28,12 +28,16 @@ public abstract class Area{
     public ArrayList<Monster> getMon() {
 	return munstars;
     }
+    public boolean isTown() {
+	return town;
+    }
+
     public Area moveFoward(){
 	if (town){
 	    if ( nextplace != null )
 		return nextplace;
 	    else {
-		System.out.println( "You can't go that way!" );
+		System.out.println( "The phantom of an old man appears and mutters something. It's hard to hear, but you can make out the words 'you shall not pass'" );
 		return this;
 	    }
 	}

@@ -22,6 +22,7 @@ public class Main extends People{
     
 	name="bob";
 
+	//blahblahblahblahblahblahblahblahblahblahblahblah
 	pellet = new Village();
 	stonehenge = new Grassland();
 	kaetown = new Townuno();
@@ -47,6 +48,7 @@ public class Main extends People{
 	towere.setFrontBack( null, dessert );
 
 	setPlace( pellet );
+	//blahblahblahblahblahblahblahblahblahblahblahblah
 
 	bhp=hp=50+(int)(Math.random()*lvl*10);
 	bmp=mp=20+(int)(Math.random()*lvl*10);
@@ -60,9 +62,10 @@ public class Main extends People{
 	bexp= 50*lvl;
 	bheight=height=175;//cm
 	bweight=weight=59;//kg
-	inventory= null;
-	statuses= null;
-	attks=null;
+	inventory= new ArrayList<Item>();
+	statuses= new ArrayList<Status>();
+	attks=new ArrayList<Attacks>();
+	attks.add( new A1() );
 	wep= new Stick();
 	arm= new Leather();
 	mun=500;
@@ -74,6 +77,7 @@ public class Main extends People{
 	this();
 	name = n;
     }
+
     
     //Heals and updates character stats
     public void lvlUp() {

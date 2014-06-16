@@ -36,7 +36,7 @@ public class User{
 	you.setPlace(you.getPlace().moveFoward());
 	_loc = you.getPlace();
 	int chance = (int)(Math.random()*2);
-	if ( _loc != null && chance == 1 ) {
+	if ( !_loc.isTown() && chance == 1 ) {
 	    new Battle(this);
 	}
     }
@@ -44,7 +44,7 @@ public class User{
 	you.setPlace(you.getPlace().moveBackward());
 	_loc = you.getPlace();
 	int chance = (int)(Math.random()*2);
-	if ( _loc != null && chance == 1 ) {
+	if ( !_loc.isTown() && chance == 1 ) {
 	    new Battle(this);
 	}
     }
@@ -60,8 +60,10 @@ public class User{
 
     public void remTeam( int i ) {
 	//return removed person; remove from team and add to list of available
-	if ( _team.size() != 1 && !_team.get(i).equals(you) ) 
+	if ( _team.size() != 1 ) 
 	    _avail.add( _team.remove(i) );
+	else 
+	    System.out.println( "Cannot remove the only person in the team." );
  
     }
 
@@ -94,10 +96,10 @@ public class User{
 		 || getLoc() instanceof Towndos 
 		 || getLoc() instanceof Towntres 
 		 || getLoc() instanceof Towncuatro ) {
-		System.out.print( "\t1: Talk\n\t2: Stay at an Inn\n" +
+		System.out.print( "\t1: Talk\n\t2: Stay at an Inn (50 $/person)\n" +
 				  "\t3: Shop\n\t4: Items\n" + 
-				  "\t5: Status\n" +
-				  "\t6: Next Area\n\t7: Previous Area\n" );
+				  "\t5: Status\n" + "\t6: Edit team\n" +
+				  "\t7: Next Area\n\t8: Previous Area\n" );
 		int response = read( 1, 8 );
 		//==========================================
 		if ( response == 1 ) {
@@ -113,7 +115,7 @@ public class User{
 		}
 		else if ( response == 2 ) {
 		    int num=0;
-		    ArrayList<Status> s= new ArrayList<Status>();
+		    ArrayList<Status> s = new ArrayList<Status>();
 		    for (People v:_all){
 			num++;
 		    }
@@ -150,9 +152,12 @@ public class User{
 		    ckStat();
 		}
 		else if ( response == 6 ) {
-		    moveFd();
+		    changePt();
 		}
 		else if ( response == 7 ) {
+		    moveFd();
+		}
+		else if ( response == 8 ) {
 		    moveBk();
 		}
 		//=========================================
@@ -187,7 +192,7 @@ public class User{
     public int read( int lo, int hi ) {
 	BufferedReader input = 
 	    new BufferedReader( new InputStreamReader(System.in) );
-	int response = 0;
+	int response = -1;
 	   
 	while ( response < lo || response > hi ) {
 	       
@@ -214,8 +219,12 @@ public class User{
 	for ( int i = 0; i < _all.size(); i++ ) {
 	    System.out.println( "\t" + (i+1) + ": " + _all.get(i).getName() );
 	}
-
-	int rep=read( 1, _all.size() );
+	System.out.println( "\t0: Exit\n" );
+	int rep=read( 0, _all.size() );
+	
+	//if Exit is chosen
+	if ( rep == 0 )
+	    return;
 
 	ArrayList<Item> i =_all.get(rep-1).getInv();
 	int num=0;
@@ -223,23 +232,82 @@ public class User{
 	    num++;
 	    System.out.println( "\t" + num +a.getName()+a.getAmount());
 	}//use??
+
     }
+
+    public void changePt() {
+	if ( _avail.size() == 0 || _team.size() == 4 ) {
+	    remPrompt();
+	}
+	else if ( _team.size() == 1 ) {
+	    addPrompt();
+	}
+	else {
+	    System.out.println("\t1: Add\n\t2: Remove\n\t0: Exit");
+	    int res = read(0,2);
+	    if ( res == 0 ) return;
+	    else if ( res == 1 ) 
+		addPrompt();
+	    else 
+		remPrompt();
+	}
+    }
+    public void remPrompt() { 
+	System.out.println( "Remove?" );
+	String rem = "";
+	for ( int i = 0; i < _team.size(); i++ ) {
+	    rem += "\t" + (i+1) + ": " + _team.get(i).getName() + "\n";
+	}
+	rem += "\t0: Exit\n";
+	System.out.print( rem );
+	int ind = read( 0, _team.size() );
+	if ( ind == 0 ) return;
+	remTeam( ind );
+    }
+    public void addPrompt() { 
+	System.out.println( "Add?" );
+	String add = "";
+	for ( int i = 0; i < _avail.size(); i++ ) {
+	    add += "\t" + (i+1) + ": " + _avail.get(i).getName() + "\n";
+	}
+	add += "\t0: Exit\n";
+	System.out.print( add );
+	int ind = read( 0, _avail.size() );
+	if ( ind == 0 ) return;
+	addTeam( ind );
+    }
+    
+    
     public void ckStat(){
 	
-	System.out.println( "Check Status of who?\n" );
-	for ( int i = 0; i < _all.size(); i++ ) {
-	    System.out.println( "\t" + (i+1) + ": " + _all.get(i).getName() );
-	}
+	System.out.println( "\n***************************\n$: " + munny );
 
-	int rep=read( 1, _all.size() );
+	for ( People p : _all ) {
+	    ArrayList<Status> stats = p.getStatuses();
+	    System.out.println("-----------" + p.getName() + "-----------");
+	    System.out.println("HP: " + p.getHp()) ;
+	    System.out.println("MP: " + p.getMp()) ;
+	    System.out.println("LVL: " + p.getLvl()) ;
+	    System.out.println("NEXT LVL: " + p.getNxt()) ;
+	    if ( stats.size() == 0 ) 		
+		System.out.println("Nothing seems to be wrong!");
+	    else 
+		System.out.println( stats );
+	}
+	// System.out.println( "Check Status of who?\n" );
+	// for ( int i = 0; i < _all.size(); i++ ) {
+	//     System.out.println( "\t" + (i+1) + ": " + _all.get(i).getName() );
+	// }
+
+	// int rep=read( 1, _all.size() );
        
-	ArrayList<Status> i =_all.get(rep-1).getStatuses();
-	int num=0;
-	for(Status a: i){
-	    num++;
-	    System.out.println( "\t" + num +a.getName());
+	// ArrayList<Status> i =_all.get(rep-1).getStatuses();
+	// int num=0;
+	// for(Status a: i){
+	//     num++;
+	//     System.out.println( "\t" + num +a.getName());
 
-	}
+	// }
 	
     }
 	//     public void printMenu() {

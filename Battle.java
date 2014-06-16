@@ -7,6 +7,8 @@ public class Battle {
     private ArrayList<Monster> _eInPlay; //Enemies in battle
     private boolean end = true;
     private AtkHeap acts;
+    private int gainM;//money
+    private int gainE;//exp
     //    private Queue turn;
 
     public Battle( User u ) {
@@ -19,6 +21,8 @@ public class Battle {
 	_eInPlay = new ArrayList<Monster>();
 	MONSTERS = _user.getLoc().getMon(); //get monster list from area
 	init( MONSTERS ); 
+	munGain();
+	expGain();
 	acts = new AtkHeap();
 	go();
     }
@@ -32,8 +36,8 @@ public class Battle {
 	    } catch(InterruptedException ex) {
 		Thread.currentThread().interrupt();
 	    }
-	    isOver(); //Game over if player dies/monsters die
 	    showHp(); //HP is shown
+	    if ( isOver() ) {break;}; //Game over if player dies/monsters die
 	    try {
 		Thread.sleep(500);
 	    } catch(InterruptedException ex) {
@@ -64,41 +68,84 @@ public class Battle {
 	System.out.println ( "\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n" );
 	for ( int i = 0; team.size() > i; i++ ) {
 	    System.out.println("What will " + team.get(i).getName() + " do?\n");
-	    System.out.println( "\t1: Attack\n\t2: Defend\n\t3: Run\n\t4: Status" );
-	    
-	    BufferedReader input = 
-		new BufferedReader( new InputStreamReader(System.in) );
-	    int response = 0;
-	    
-	    while ( response != 1 && response != 2 && response != 3 
-		    && response != 4 ) {
+	    System.out.print( "\t1: Attack\n\t2: Defend\n\t3: Run\n\t4: Status\n\t0: Exit\n" );
+	    int response = read( 0, 4 );
+	    System.out.println( response );
+	    if ( response == 1 ) { 
+		//==============Choose Attack==================
+		System.out.println( "Which attack?\n" );
+		String out = ""; //listattks
+		for ( int j = 0; j < team.get(i).getAttks().size(); j++ ) {
+		    out += "\t" + (j+1) + ": " + 
+			team.get(i).getAttks().get(j).getName();
+		}
+		out += "\n\t0: Exit\n";
+		
+		System.out.print( out );
+		int atk = read( 0, team.get(i).getAttks().size() );
+		if ( atk == 0 ) { //Exit
+ 		    return; }
+		//===============Choose Target====================
+		System.out.println( "Who do you wish to slay?\n" );
+		String en = ""; //list enemies
+		for ( int k = 0; k < _eInPlay.size(); k++ ) {
+		    en += "\t" + (k+1) + ": " +
+			_eInPlay.get(k).getName() + "\n";
+		}
+		en += "\t0: Exit\n";
+		System.out.print(en);
 
-		//************Reads input.**************************
-		try {
-		    response = Integer.parseInt(input.readLine());
+		int tar = read( 0, _eInPlay.size() );//listenemies
+		if ( tar == 0 ) { //Exit
+		    return;
 		}
-		//Catch exceptions and ask for correct integer input
-		catch (IOException e) { 	    
+		//==============================================
+		
+		if ( atk == 1 ) {
+		    acts.add( new A1( _eInPlay.get(tar-1), team.get(i) ) );
 		}
-		catch (NumberFormatException e) { 	    
+		else if ( atk == 2 ) {
+		    acts.add( new A2( _eInPlay.get(tar-1), team.get(i) ) );
 		}
-		if ( response > 4 || response < 1 ) {
-		    System.out.print( "(Enter 1, 2, 3, or 4.) " );
-		    input = new BufferedReader( new InputStreamReader(System.in) );
+		else if ( atk == 3 ) {
+		    acts.add( new A3( _eInPlay.get(tar-1), team.get(i) ) );
 		}
-		//****************************************************
-
-		//ADD STUFF
-		if ( response == 1 ) {  }
-		if ( response == 2 ) {
-		    team.get(i).defend();
-		}
-		if ( response == 3 ) {
-		}
-		else {}
+	      
 	    }
+	    if ( response == 2 ) {
+		team.get(i).defend();
+	    }
+	    if ( response == 3 ) {
+	    }
+	    else {}
 	}
-	System.out.println( "\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n" );
+    	System.out.println( "\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n" );
+    }
+
+    //Check if entered a valid int from lo to high inclusive
+    public int read( int lo, int hi ) {
+	BufferedReader input = 
+	    new BufferedReader( new InputStreamReader(System.in) );
+	int response = -1;
+	   
+	while ( response < lo || response > hi ) {
+	       
+	    //************Reads input.**************************
+	    try {
+		response = Integer.parseInt(input.readLine());
+	    }
+	    //Catch exceptions and ask for correct integer input
+	    catch (IOException e) { 	    
+	    }
+	    catch (NumberFormatException e) { 	    
+	    }
+	    if ( response > hi || response < lo ) {
+		System.out.print( "(Enter a valid integer value.) " );
+		input = new BufferedReader( new InputStreamReader(System.in) );
+	    }
+	    //****************************************************
+	}
+	return response;
     }
     
     //Available attacks for person
@@ -121,7 +168,15 @@ public class Battle {
     public void init( ArrayList<Monster> mon ) {
 	int enmyCt = 1 + (int)(Math.random()*4); //How many enemies in play?
 	while ( enmyCt > 0 ) { //Add rand enmys to battle depending on MONSTERS
-	    _eInPlay.add( MONSTERS.get((int)(Math.random()*MONSTERS.size())) );
+	    try {
+	    Class mans = MONSTERS.get((int)(Math.random()
+					    *MONSTERS.size())).getClass();
+	    _eInPlay.add( (Monster)(mans.newInstance()) );
+	    }
+	    catch(InstantiationException e) {
+	    }
+	    catch(IllegalAccessException e) {
+	    }
 	    enmyCt--;
 	}
     }
@@ -181,35 +236,40 @@ public class Battle {
 
     //Get exp drop from monster and divide it to each alive person on team.
     public int expGain() {
-	int gain = 0;
+	int gainE = 0;
 	for ( Monster m : _eInPlay ) 
-	    gain += m.getExp();
+	    gainE += m.getExp();
+	return gainE;
+    }
 
+
+    //Get money drops from monsters
+    public int munGain() {
+	int gainM = 0;
+	for ( Monster m : _eInPlay ) 
+	    gainM += m.getMun();
+	return gainM;
+    }    
+
+    //Player gain exp/munny!
+    public void winnings() {
+	//Divide exp amongst characters
 	int div = 0;
 	ArrayList<People> team = _user.getTeam();
 	for ( People p : team ) {
 	    if ( !p.getDead() ) 
 		div += 1;
 	}
-	return gain/div;
-    }
+	gainE = gainE/div;
 
-    //Get money drops from monsters
-    public int munGain() {
-	int gain = 0;
-	for ( Monster m : _eInPlay ) 
-	    gain += m.getMun();
-	return gain;
-    }    
-
-    //Player gain exp/munny!
-    public void winnings() {
-	ArrayList<People> team = _user.getTeam();
 	for ( People p : team ) {
-	    if ( !p.getDead() ) 
-		p.gainExp( expGain() );
+	    if ( !p.getDead() ) {
+		System.out.println(p.getName() + " gained " + gainE + " exp!"); 
+		p.gainExp( gainE );
+	    }
 	}
-	_user.addMun( munGain() );
+	System.out.println( "Earned " + gainM + " $!" );
+	_user.addMun( gainM );
     }
 	    
     //Is team dead?

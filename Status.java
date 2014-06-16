@@ -10,7 +10,14 @@ public abstract class Status{
 
 	ArrayList<Status> stat=a.getStatuses();
 	stat.add(s);
+<<<<<<< HEAD
 	a.setStatuses(stat);
+=======
+
+	// a.getStatuses().add(s);
+	// ArrayList<Status> stat=a.getStatuses();
+	// a.setStatuses(stat);
+>>>>>>> 8e406d83ebacf3d0586d1720f8d1cb64c7b0a4c8
     }
     public abstract String effect();// how cause effect
   public String getName(){
