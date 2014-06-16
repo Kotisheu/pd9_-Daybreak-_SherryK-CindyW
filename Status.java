@@ -1,8 +1,5 @@
 import java.util.*;
-<<<<<<< HEAD
-=======
 
->>>>>>> 557236d054d541b1205bd1b41acb323e2e8a0921
 public abstract class Status{
     protected boolean buff;
     protected String name;
@@ -10,13 +7,12 @@ public abstract class Status{
 	return buff;
     }
     public void affect(Base a, Status s){
-<<<<<<< HEAD
+
 	ArrayList<Status> stat=a.getStatuses()
 	    stat.add(s);
-=======
+
 	a.getStatuses().add(s);
 	ArrayList<Status> stat=a.getStatuses();
->>>>>>> 557236d054d541b1205bd1b41acb323e2e8a0921
 	a.setStatuses(stat);
     }
     public abstract String effect();// how cause effect
