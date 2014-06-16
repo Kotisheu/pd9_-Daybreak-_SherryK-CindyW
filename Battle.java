@@ -268,7 +268,7 @@ public class Battle {
 		p.gainExp( gainE );
 	    }
 	}
-	System.out.println( "Earned " + gainM + " munny!" );
+	System.out.println( "Earned " + gainM + " $!" );
 	_user.addMun( gainM );
     }
 	    
