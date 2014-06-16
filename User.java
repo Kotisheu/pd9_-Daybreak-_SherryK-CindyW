@@ -185,7 +185,8 @@ public class User{
 		}
 
 		else if ( response == 4 ) {
-		    eqPrompt();
+		    System.out.println( "You have no items to use!" );
+		    //eqPrompt();
 		}
 		else if ( response == 5 ) {
 		    ckStat();
