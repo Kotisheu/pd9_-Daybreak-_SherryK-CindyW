@@ -170,6 +170,34 @@ class A3 extends Attacks {
 
 }
 
+class M4 extends Attacks {
+
+    public M4() {
+	_name = "Judgement";
+	_description = "A godly magic spell. Uses 30MP. Wait time is 3.";
+	_pri = tmpPri = 4;
+	_multiplier = 10;
+	_mag = 30;
+    }
+    
+    public M4 ( Base tar, Base atkr ) {
+	this();
+	_tar = tar;
+	_atkr = atkr;
+	_atkr.canAtk(false);
+	
+    }
+
+    public void declare() {
+	
+	if( !_tar.getDead() && !_atkr.getDead() )//As long as no one is dead there
+
+	    System.out.println( mag( _tar, _atkr ) ); //declare a normal attack
+	_atkr.canAtk(true);
+    }
+
+}
+
 class M1 extends Attacks {
 
     public M1() {

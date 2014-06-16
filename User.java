@@ -14,6 +14,7 @@ public class User{
     private int munny;
     private int day=0;
     private int time=0;
+    People ka,gi,tr,th;
     
     public User() {
 	_avail = new ArrayList<People>();
@@ -24,6 +25,10 @@ public class User{
     public User(String name){
 	this();
 	you= new Main(name);
+	ka = new Kangaroo();
+	gi = new Girl();
+	tr = new Tree();
+	th = new Thief();
 	_team.add(you);
 	_all.add(you);
 	//	System.out.println( you.getPlace() );
@@ -35,6 +40,40 @@ public class User{
     public void moveFd() {
 	you.setPlace(you.getPlace().moveFoward());
 	_loc = you.getPlace();
+	if ( !_loc.hasVisited() ) {
+	    int e = _loc.event();
+	    if ( e == 1 ) {
+		System.out.println( "Kangaroo joined your party" );
+		_team.add(ka);
+		_all.add(ka);
+	    }
+	    else if ( e == 2 ) {
+	    }
+	    else if ( e == 3 ) {
+		System.out.println( "Mysterious girl joined your party" );
+		_team.add(gi);
+		_all.add(gi);
+	    }
+	    else if ( e == 4 ) {
+		System.out.println( "Odd tree joined your party" );
+		_team.add(tr);
+		_all.add(tr);
+	    }
+	    else if ( e == 5 ) {
+		System.out.println( "Sneakty thief joined your party" );
+		_team.add(th);
+		_all.add(th);
+	    }
+	    else if ( e == 6 ) {
+		if ( day > 30 )
+		    System.out.println( "Oh no! He has been slain! Everyone in the tower is hysterically running around." );
+		else { 
+		    System.out.println( "Rejoice! He is alive! Now you can learnan amazing skill!" );
+		    you.addAtks( new M4() );
+		}
+	    }	
+	    _loc.visited();
+	}
 	int chance = (int)(Math.random()*2);
 	if ( !_loc.isTown() && chance == 1 ) {
 	    new Battle(this);

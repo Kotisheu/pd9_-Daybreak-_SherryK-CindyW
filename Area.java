@@ -31,6 +31,12 @@ public abstract class Area{
     public boolean isTown() {
 	return town;
     }
+    public boolean hasVisited() {
+	return first;
+    }
+    public void visited() {
+	first = true;
+    }
 
     public Area moveFoward(){
 	if (town){
@@ -75,6 +81,7 @@ public abstract class Area{
     }
     
     public abstract Area Check();
+    public abstract int event();
 }
 
 
@@ -91,6 +98,9 @@ class Village extends Area{
 	stepsbackwards = 0;
 	nextplace= stonehenge;
 	backplace=null;
+    }
+    public int event() { 
+	return -1;
     }
     public Area Check(){//town no need to do anything
 	return this;
@@ -115,6 +125,10 @@ class Grassland extends Area{
 	System.out.println( nextplace );
 	backplace=pellet;
     }
+    public int event() {
+	System.out.println( (new Story()).A1 );
+	return -1;
+    }
     public Area Check(){
 	if (step == stepstowards){
 	}
@@ -138,6 +152,12 @@ class Townuno extends Area{
 	backplace=stonehenge;
 
     }
+    public int event() {
+	System.out.println( (new Story()).t1 );
+	System.out.println( (new Story()).E3 );
+	return 1;
+    }
+
     public Area Check(){
 	return this;
     }
@@ -147,7 +167,7 @@ class Forest extends Area{
 	town = false;
 	first = false;
 	town= false;
-	name= "Stonehenge";
+	name= "Feywood";
 	munstars = new ArrayList<Monster>();
 	munstars.add( new Goblin() );
 	munstars.add( new Monkey() );
@@ -161,6 +181,11 @@ class Forest extends Area{
 	backplace=kaetown;
 
     }
+    public int event() {
+	System.out.println( (new Story()).A2 );
+	return -1;
+    }
+
     public Area Check(){
 	if (step == stepstowards){
 	}
@@ -185,6 +210,11 @@ class Towndos extends Area{
 	backplace=feywood;
 
     }
+    public int event() {
+	System.out.println( (new Story()).t2 );
+	System.out.println( (new Story()).E1 );
+     	return 2;
+    }
     public Area Check(){
 	return this;
     }
@@ -207,6 +237,11 @@ class Water extends Area{
 	nextplace=tree;
 	backplace=seaporte;
     }
+    public int event() {
+	System.out.println( (new Story()).A3 );
+	System.out.println( (new Story()).E2 );
+	return 3;
+    }
     public Area Check(){
 	return this;	
     }
@@ -225,6 +260,11 @@ class Towntres extends Area{
 	nextplace= sans;
 	backplace=aguael;
 
+    }
+    public int event() {
+	System.out.println( (new Story()).t3 );
+	System.out.println( (new Story()).E5 );
+	return 4;
     }
     public Area Check(){
 	return this;
@@ -249,6 +289,10 @@ class Mountain extends Area{
 	backplace=tree;
 
     }
+    public int event() {
+	System.out.println( (new Story()).A4 );
+	return -1;
+    }
     public Area Check(){
 	return this;
     }
@@ -267,6 +311,11 @@ class Towncuatro extends Area{
 	nextplace= dessert;
 	backplace=sans;
 
+    }
+    public int event() {
+	System.out.println( (new Story()).t4 );
+	System.out.println( (new Story()).E4 );
+	return 5;
     }
     public Area Check(){
 	return this;
@@ -289,6 +338,10 @@ class Desert extends Area{
 	nextplace=towere;
 	backplace=metro;
     }
+    public int event() {
+	System.out.println( (new Story()).A5 );
+	return -1;
+    }
     public Area Check(){	
 	return this;
     }
@@ -306,6 +359,10 @@ class Tower extends Area{
 	stepsbackwards = 0;
 	nextplace= null;
 	backplace= dessert;
+    }
+    public int event() {
+	System.out.println( (new Story()).E6 );
+	return 6;
     }
     public Area Check(){
 	return this;
