@@ -16,7 +16,8 @@ public class Battle {
 	// MONSTERS = new ArrayList<Monster>();
 	// MONSTERS.add( new Slime() );
 	//
-	//	_user.getLoc().getMon(); //get monster list from area
+	_eInPlay = new ArrayList<Monster>();
+	MONSTERS = _user.getLoc().getMon(); //get monster list from area
 	init( MONSTERS ); 
 	acts = new AtkHeap();
 	go();
@@ -118,7 +119,6 @@ public class Battle {
     }
 
     public void init( ArrayList<Monster> mon ) {
-	_eInPlay = new ArrayList<Monster>();
 	int enmyCt = 1 + (int)(Math.random()*4); //How many enemies in play?
 	while ( enmyCt > 0 ) { //Add rand enmys to battle depending on MONSTERS
 	    _eInPlay.add( MONSTERS.get((int)(Math.random()*MONSTERS.size())) );
